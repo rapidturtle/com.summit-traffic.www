@@ -1,0 +1,251 @@
+/* style.css */
+
+a img{
+	border: none;
+}
+
+body {
+	background: #fff url(/images/bkg_Page.png) repeat-x;
+	color: #999;
+	font-family: Verdana;
+	margin: 0;
+	padding: 0;
+}
+
+
+/* BANNER STYLES */
+
+#banner {
+	height: 107px;
+	margin: 0 auto;
+	text-align: center;
+	width: 927px;
+}
+
+#banner h1 {
+	background: transparent url(/images/banner_logo.png) no-repeat;
+	height: 107px;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+#banner h1 span {
+	display: none;
+}
+
+
+/* MENU STYLES */
+
+#menu {
+	margin: 0 auto;
+	padding: 0;
+	text-align: center;
+	width: 904px;
+}
+
+#menu ul {
+	margin: 0;
+	padding: 0;
+}
+
+#menu ul li {
+	display: inline;
+	margin: 0;
+}
+
+
+/* BODY STYLES */
+
+#body {
+	background: transparent url(/images/bkg_Body.png) repeat-x 0 82px;
+	margin: 14px auto 0 auto;
+	min-height: 500px;
+	padding: 0 50px;
+	width: 800px;
+}
+
+#body a {
+	color: #09f;
+	text-decoration: none;
+}
+
+#body a:hover {
+	text-decoration: underline;
+}
+
+#body h1#page_title {
+	background: transparent url(/images/bkg_H1.png) no-repeat;
+	color: #068;
+	font-size: 20px;
+	height: 20px;
+	margin: 0 -50px 48px -50px;
+	padding: 22px 30px 40px 30px;
+	width: 840px;
+}
+
+#body h2 {
+	color: #068;
+	font-size: 14px;
+	margin-bottom: 20px;
+	margin-top: 40px;
+}
+
+#body h3 {
+	color: #000;
+	font-size: 14px;
+	margin-bottom: 0;
+}
+
+#body h3 + p {
+	margin-top: 6px;
+}
+
+#body li.email {
+	list-style: circle outside url(/images/li_Email.png);
+}
+
+#body li.mail {
+	list-style: circle outside url(/images/li_Mail.png);
+}
+
+#body li.phone {
+	list-style: circle outside url(/images/li_Phone.png);
+}
+
+#body p {
+	color: #000;
+	font-size: 14px;
+	line-height: 20px;
+	margin-bottom: 20px;
+}
+
+#body #y2009 {
+	background: transparent url(/images/year_2009.png) no-repeat;
+	min-height: 250px;
+}
+
+#body #card {
+	background: transparent url(/images/bkg_ContactInfo.png) no-repeat;
+	height: 230px;
+	margin: 0 20px;
+	padding: 30px 30px 65px 360px;
+	width: 370px;
+}
+
+#body #hero {
+	clear: both;
+	height: 450px;
+	margin: 0 -50px 10px -50px;
+	padding: 0;
+	width: 900px;
+}
+
+#body .tab {
+	float: left;
+	margin: 0 20px 20px 0;
+	padding: 0;
+	width: 376px;
+}
+
+#body .tab h2 {
+	background: transparent url(/images/bkg_Tab.png) no-repeat;
+	height: 17px;
+	margin-top: 0;
+	padding: 10px 25px 10px 25px;
+	width: 326px;
+}
+
+#body .tab h2 a {
+	color: #068;
+}
+
+#body .tab ul {
+	color: #000;
+	font-size: 14px;
+	line-height: 20px;
+	list-style: circle outside url(/images/li_Bullet.png);
+}
+
+
+/* FOOTER STYLES */
+
+#footer {
+	border-top: 1px solid #ccc;
+	clear: both;
+	font-size: 12px;
+	margin: 50px auto 50px auto;
+	padding: 10px 0 0 0;
+	width: 900px;
+}
+
+#footer #copyright {
+	float: left;
+}
+
+#footer #links {
+	color: #09f;
+	float: right;
+	padding-top: 5px;
+}
+
+#footer #links a {
+	color: #999;
+	text-decoration: none;
+}
+
+#footer #links a:hover {
+	text-decoration: underline;
+}
+
+
+/* CLASSES */
+
+.article_date {
+	color: #068;
+	font-size: 12px;
+	font-weight: normal;
+}
+
+.blue {
+	color: #068;
+}
+
+.panel_row {
+	clear: both;
+	height: 190px;
+	margin: 0 -50px;
+	widows: 900px;
+}
+
+.panel {
+	float: left;
+	height: 190px;
+	margin: 10px 15px 20px 0;
+	padding: 0;
+	width: 290px;
+}
+
+.news {
+	background: transparent url(/images/bkg_Panel.png) no-repeat;
+	height: 150px;
+	overflow: hidden;
+	padding: 20px;
+	width: 250px;
+}
+
+.last {
+	margin-right: 0;
+}
+
+.read_more {
+	background: transparent url(/images/li_Bullet.png) no-repeat 0 4px;
+	font-size: 12px;
+	padding-left: 15px;
+}
+
+.year {
+	min-height: 250px;
+	padding: 0 0 0 100px;
+	width: 700px;
+}

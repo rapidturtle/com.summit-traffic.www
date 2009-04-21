@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<%= yield :meta %>
+
+		<link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+		<%= stylesheet_link_tag 'application' %>
+		<%= yield :scripts %>
+		
+		<title><%= @page_title == nil ? 'Summit Traffic Solutions' : "Summit Traffic Solutions | #{@page_title.join(' | ')}" %></title>
+	</head>
+	<body>
+		
+		<div id="banner">
+			<h1><span>Summit Traffic Solutions</span></h1>
+		</div> <!-- END banner -->
+		
+		<div id="menu">
+			<ul>
+				<li id="home"><%= link_to_unless_current 'Home', root_path %></li>
+				<li id="products"><%= link_to_unless_current 'Products', products_path %></li>
+				<li id="news"><%= link_to_unless_current 'News', articles_path %></li>
+				<li id="contact"><%= link_to_unless_current 'Contact', contact_path %></li>
+			</ul>
+		</div> <!-- END menu -->
+		
+		<div id="body">
+			<%= yield :layout %>
+		</div> <!-- END body -->
+		
+		<div id="footer">
+			<div id="copyright"><%= image_tag 'footer_logo.png', :alt => 'Summit Traffic Solutions' %>&emsp;&copy; 2009 Summit Traffic Solutions. All rights reserved.</div>
+			<div id="links"><%= link_to_unless_current 'Home', root_path %> | <%= link_to_unless_current 'Products', products_path %> | <%= link_to_unless_current 'News', articles_path %> | <%= link_to_unless_current 'Contact', contact_path %></div>
+		</div> <!-- END footer -->
+		
+		<!-- BEGIN Google Analytics code -->
+		
+		<% javascript_tag do %>
+			var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+			document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+		<% end %>
+		<% javascript_tag do %>
+			try {
+				var pageTracker = _gat._getTracker("UA-519048-8");
+				pageTracker._trackPageview();
+			} catch(err) {}
+		<% end %>
+		
+		<!-- END Google Analytics code -->
+	</body>
+</html>

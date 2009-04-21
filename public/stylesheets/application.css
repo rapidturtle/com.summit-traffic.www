@@ -1,4 +1,4 @@
-/* style.css */
+/* application.css */
 
 a img{
 	border: none;
@@ -38,6 +38,7 @@ body {
 /* MENU STYLES */
 
 #menu {
+	clear: both;
 	margin: 0 auto;
 	padding: 0;
 	text-align: center;
@@ -49,9 +50,49 @@ body {
 	padding: 0;
 }
 
-#menu ul li {
-	display: inline;
-	margin: 0;
+#menu ul li, #menu ul li a {
+	display: block;
+	float: left;
+	margin: 0 0 14px 0;
+}
+
+#menu ul li a {
+	text-decoration: none;
+}
+
+#menu ul li span {
+	visibility: hidden;
+}
+
+#menu ul li#home, #menu ul li#home a {
+	height: 38px;
+	width: 210px;
+}
+
+#menu ul li#home a {
+	background: transparent url(/images/btn_Home_off.png) no-repeat;
+}
+
+#menu ul li#home, #menu ul li#home a:hover {
+	background: transparent url(/images/btn_Home_on.png) no-repeat;
+}
+
+#menu ul li#contact {
+	background: transparent url(/images/btn_Contact_on.png) no-repeat;
+	height: 38px;
+	width: 239px;
+}
+
+#menu ul li#news {
+	background: transparent url(/images/btn_News_on.png) no-repeat;
+	height: 38px;
+	width: 211px;
+}
+
+#menu ul li#products {
+	background: transparent url(/images/btn_Products_on.png) no-repeat;
+	height: 38px;
+	width: 243px;
 }
 
 
@@ -59,6 +100,7 @@ body {
 
 #body {
 	background: transparent url(/images/bkg_Body.png) repeat-x 0 82px;
+	clear: both;
 	margin: 14px auto 0 auto;
 	min-height: 500px;
 	padding: 0 50px;

@@ -20,10 +20,10 @@
 		
 		<div id="menu">
 			<ul>
-				<li id="home"><%= link_to_unless_current '<span>Home</span>', root_path %></li>
-				<li id="products"><%= link_to_unless_current '<span>Products</span>', products_path %></li>
-				<li id="news"><%= link_to_unless_current '<span>News</span>', articles_path %></li>
-				<li id="contact"><%= link_to_unless_current '<span>Contact</span>', contact_path %></li>
+				<li><%= link_to '<span>Home</span>', root_path, :id => 'home' %></li>
+				<li><%= link_to '<span>Products</span>', products_path, :id => 'products' %></li>
+				<li><%= link_to '<span>News</span>', articles_path, :id => 'news' %></li>
+				<li><%= link_to '<span>Contact</span>', contact_path, :id => 'contact' %></li>
 			</ul>
 		</div> <!-- END menu -->
 		

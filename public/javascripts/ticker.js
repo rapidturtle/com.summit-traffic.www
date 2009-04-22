@@ -48,8 +48,9 @@ Object.extend(NewsTicker.prototype, {
 		// build the array of news titles
 		$A(xml.getElementsByTagName("item")).each(function(item) {
 			title = item.getElementsByTagName("title")[0].childNodes[0].nodeValue;
+			desc = item.getElementsByTagName("description")[0].childNodes[0].nodeValue;
 			var link = NewsTicker.tickerLink;
-			this.items.push({title: title, link: link});
+			this.items.push({title: title, description: desc, link: link});
 		}.bind(this));
 	},
 	
@@ -73,7 +74,8 @@ Object.extend(NewsTicker.prototype, {
 		new Effect.Fade('news-link', {
 			afterFinish: function() {
 				this.switchData();
-				new Effect.Appear('news-link'); }.bind(this)});
+				new Effect.Appear('news-title');
+				new Effect.Appear('news-desc') }.bind(this)});
  
 	},
 	
@@ -81,6 +83,7 @@ Object.extend(NewsTicker.prototype, {
 		$(this.tickerTitle).setAttribute("href", this.tickerLink);
 		if (this.items[this.currentTitle]) {
 			$(this.tickerTitle).innerHTML = this.items[this.currentTitle]['title'];
+			$(this.tickerTitle).innerHTML = this.items[this.currentTitle]['description'];
 		}
 	}
 });

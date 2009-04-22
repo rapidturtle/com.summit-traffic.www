@@ -13,7 +13,7 @@ class ArticlesController < ApplicationController
   
   # GET /articles/:id
   def show
-    @article = Articles.find(params[:id])
+    @article = Article.find(params[:id])
     @page_title << @article.title
   end
   

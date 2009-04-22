@@ -8,6 +8,8 @@
 
 		<link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
 		<%= stylesheet_link_tag 'application' %>
+		<%= yield :links %>
+		
 		<%= yield :scripts %>
 		
 		<title><%= @page_title == nil ? 'Summit Traffic Solutions' : "Summit Traffic Solutions | #{@page_title.join(' | ')}" %></title>

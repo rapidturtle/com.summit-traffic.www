@@ -1,3 +1,6 @@
+<% content_for :links do -%>
+<%= tag :link, :type => 'application/rss+xml', :title => 'RSS', :href => formatted_articles_url(:rss) %>
+<% end -%>
 <h1 id="page_title">News</h1>
 
 <% @years.sort.reverse.each do |year, articles| -%>

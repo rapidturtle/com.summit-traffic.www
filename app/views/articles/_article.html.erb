@@ -1,0 +1,2 @@
+<h3><%= link_to h(article.title), article_path(article) %> <%= content_tag :span, article.post_date.strftime('%b %d, %Y'), :class => 'article_date' %></h3>
+<p><%= truncate article.body, :length => 200 %></p>

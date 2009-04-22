@@ -7,7 +7,8 @@ class ArticlesController < ApplicationController
   
   # GET /articles
   def index
-    @articles = Article.all
+    @articles = Article.all(:order => 'post_date DESC')
+    @year = @articles.group_by { |a| a.post_date.beginning_of_year }
   end
   
   # GET /articles/:id

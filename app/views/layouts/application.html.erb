@@ -20,10 +20,10 @@
 		
 		<div id="menu">
 			<ul>
-				<li><%= link_to '<span>Home</span>', root_path, :id => 'home' %></li>
-				<li><%= link_to '<span>Products</span>', products_path, :id => 'products' %></li>
-				<li><%= link_to '<span>News</span>', articles_path, :id => 'news' %></li>
-				<li><%= link_to '<span>Contact</span>', contact_path, :id => 'contact' %></li>
+				<li><%= selected_link_to '<span>Home</span>', root_path, { :id => 'home' }, 'root' %></li>
+				<li><%= selected_link_to '<span>Products</span>', products_path, { :id => 'products' }, 'products' %></li>
+				<li><%= selected_link_to '<span>News</span>', articles_path, { :id => 'news' }, 'articles' %></li>
+				<li><%= selected_link_to '<span>Contact</span>', contact_path, { :id => 'contact' }, 'contact' %></li>
 			</ul>
 		</div> <!-- END menu -->
 		
@@ -33,7 +33,7 @@
 		
 		<div id="footer">
 			<div id="copyright"><%= image_tag 'footer_logo.png', :alt => 'Summit Traffic Solutions' %>&emsp;&copy; 2009 Summit Traffic Solutions. All rights reserved.</div>
-			<div id="links"><%= link_to_unless_current 'Home', root_path %> | <%= link_to_unless_current 'Products', products_path %> | <%= link_to_unless_current 'News', articles_path %> | <%= link_to_unless_current 'Contact', contact_path %></div>
+			<div id="links"><%= link_to 'Home', root_path %> | <%= link_to 'Products', products_path %> | <%= link_to 'News', articles_path %> | <%= link_to 'Contact', contact_path %></div>
 		</div> <!-- END footer -->
 		
 		<!-- BEGIN Google Analytics code -->

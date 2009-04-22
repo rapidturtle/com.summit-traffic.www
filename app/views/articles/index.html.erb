@@ -1,0 +1,10 @@
+<h1 id="page_title">News</h1>
+
+<% @years.sort.reverse.each do |year, articles| -%>
+<div id="y<%= year.strftime('%Y') %>">
+	<% articles.group_by { |a| a.post_date.beginning_of_month }.sort.reverse.each do |month, articles| -%>
+	<h2><%= month.strftime('%B') %></h2>
+	<%= render :partial => articles %>
+	<% end -%>
+</div> <!-- END year y<%= year.strftime('%Y') %> -->
+<% end if !@years.nil? -%>

@@ -65,54 +65,42 @@ body {
 }
 
 #menu ul li a#home {
+	background: transparent url(/images/btn_Home_off.png) no-repeat;
 	height: 38px;
 	width: 210px;
 }
 
-#menu ul li a#home {
-	background: transparent url(/images/btn_Home_off.png) no-repeat;
-}
-
-#menu ul li a#home:hover {
+#menu ul li a#home:hover, #menu ul li a#home.selected {
 	background: transparent url(/images/btn_Home_on.png) no-repeat;
 }
 
 #menu ul li a#contact {
+	background: transparent url(/images/btn_Contact_off.png) no-repeat;
 	height: 38px;
 	width: 239px;
 }
 
-#menu ul li a#contact {
-	background: transparent url(/images/btn_Contact_off.png) no-repeat;
-}
-
-#menu ul li a#contact:hover {
+#menu ul li a#contact:hover, #menu ul li a#contact.selected {
 	background: transparent url(/images/btn_Contact_on.png) no-repeat;
 }
 
 #menu ul li a#news {
+	background: transparent url(/images/btn_News_off.png) no-repeat;
 	height: 38px;
 	width: 211px;
 }
 
-#menu ul li a#news {
-	background: transparent url(/images/btn_News_off.png) no-repeat;
-}
-
-#menu ul li a#news:hover {
+#menu ul li a#news:hover, #menu ul li a#news.selected {
 	background: transparent url(/images/btn_News_on.png) no-repeat;
 }
 
 #menu ul li a#products {
+	background: transparent url(/images/btn_Products_off.png) no-repeat;
 	height: 38px;
 	width: 243px;
 }
 
-#menu ul li a#products {
-	background: transparent url(/images/btn_Products_off.png) no-repeat;
-}
-
-#menu ul li a#products:hover {
+#menu ul li a#products:hover, #menu ul li a#products.selected {
 	background: transparent url(/images/btn_Products_on.png) no-repeat;
 }
 
@@ -183,8 +171,43 @@ body {
 	margin-bottom: 20px;
 }
 
+#body #y2008 {
+	background: transparent url(/images/year_2008.png) no-repeat;
+	min-height: 250px;
+}
+
 #body #y2009 {
 	background: transparent url(/images/year_2009.png) no-repeat;
+	min-height: 250px;
+}
+
+#body #y2010 {
+	background: transparent url(/images/year_2010.png) no-repeat;
+	min-height: 250px;
+}
+
+#body #y2011 {
+	background: transparent url(/images/year_2011.png) no-repeat;
+	min-height: 250px;
+}
+
+#body #y2012 {
+	background: transparent url(/images/year_2012.png) no-repeat;
+	min-height: 250px;
+}
+
+#body #y2013 {
+	background: transparent url(/images/year_2013.png) no-repeat;
+	min-height: 250px;
+}
+
+#body #y2014 {
+	background: transparent url(/images/year_2014.png) no-repeat;
+	min-height: 250px;
+}
+
+#body #y2015 {
+	background: transparent url(/images/year_2015.png) no-repeat;
 	min-height: 250px;
 }
 

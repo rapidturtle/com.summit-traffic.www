@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
   
   before_filter { |c| c.send :set_page_title, ['News'] }
   
-  caches_page :index, :show, :new
+  caches_page :index, :ticker, :show, :new
   cache_sweeper :article_sweeper, :only => [:create, :update, :destroy]
   
   # GET /articles

@@ -6,8 +6,9 @@ Object.extend(NewsTicker.prototype, {
 	
 	tickerDiv: "ticker", 
 	tickerLocation: "billboard", 
-	tickerTitle: "news-link",
-	tickerLink: "/news/",
+	tickerTitle: "news-title",
+	tickerDesc: "news-desc",
+	tickerLink: "/articles/",
 	feedURL: "/articles/ticker.rss",
 	pauseLength: 3500,
 	timer: 0,
@@ -38,6 +39,7 @@ Object.extend(NewsTicker.prototype, {
 		// replace the placeholder content with the first news title
 		if (this.items[this.currentTitle]) {
 			$(this.tickerTitle).innerHTML = this.items[this.currentTitle]['title'];
+			$(this.tickerDesc).innerHTML = this.items[this.currentTitle]['description'];
 			this.start();// start the timer if we have valid headlines
 		}
 	},

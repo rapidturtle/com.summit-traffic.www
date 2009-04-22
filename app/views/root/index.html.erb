@@ -1,21 +1,24 @@
 <% content_for :meta do -%>
 <%= tag :meta, 'http-equiv'.to_sym => 'pragma', :content => 'no-cache' %>
 <% end -%>
+<% content_for :scripts do -%>
+<%= javascript_include_tag :defaults, 'ticker' %>
+<% end -%>
 <div id="hero">
-	<a href="http://www.wavetronix.com" target="_blank"><img src="/images/hero.png" alt="Hero image" /></a>
+	<%= link_to image_tag('hero.png', :alt => 'Dilemma zone protection from Wavetronix'), 'http://www.wavetronix.com', :target => '_blank' %>
 </div> <!-- END hero -->
 
 <div class="panel_row">
-	<div class="news panel">
+	<div id="ticker" class="news panel">
 		<h3>News Article Title</h3>
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br /><a class="read_more" href="news.html">Read more&hellip;</a></p>
 	</div> <!-- END panel -->
 	
 	<div class="panel">
-		<a href="http://www.wavetronix.com" target="_blank"><img src="/images/panel_ClickManagedSwitches.png" /></a>
+		<%= link_to image_tag('panel_ClickManagedSwitches.png', :alt => 'Click! managed ethernet switches from Wavetronix'), 'http://www.wavetronix.com', :target => '_blank' %>
 	</div> <!-- END panel -->
 	
 	<div class="panel last">
-		<a href="http://www.jsftech.com/" target="_blank"><img src="/images/panel_JSFLights.png" /></a>
+		<%= link_to image_tag('panel_JSFLights.png', :alt => 'Solar powered crosswalk lights from JSF Technologies'), 'http://www.jsftech.com', :target => '_blank' %>
 	</div> <!-- END panel -->
 </div> <!-- END panel_row -->

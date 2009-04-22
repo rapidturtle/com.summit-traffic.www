@@ -11,6 +11,11 @@ class ArticlesController < ApplicationController
     @year = @articles.group_by { |a| a.post_date.beginning_of_year }
   end
   
+  # GET /articles/ticker
+  def ticker
+    @articles = Article.all(:limit => 5, :order => 'post_date DESC')
+  end
+  
   # GET /articles/:id
   def show
     @article = Article.find(params[:id])

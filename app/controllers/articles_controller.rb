@@ -14,6 +14,9 @@ class ArticlesController < ApplicationController
   # GET /articles/ticker
   def ticker
     @articles = Article.all(:limit => 5, :order => 'post_date DESC')
+    respond_to do |format|
+      format.rss # /articles/ticker.rss
+    end
   end
   
   # GET /articles/:id
@@ -37,8 +40,8 @@ class ArticlesController < ApplicationController
     @article = Article.new(params[:article])
     
     if @article.save
-      flash[:notice] = "Article was successfully created."
-      redirect_to @article
+      flash[:notice] = "<em>#{@article.title}</em> was successfully created."
+      redirect_to articles_path
     else
       render :action => 'new'
     end
@@ -49,8 +52,8 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
     
     if @article.update_attributes(params[:article])
-      flash[:notice] = "Article was successfully updated."
-      redirect_to @article
+      flash[:notice] = "<em>#{@article.title}</em> was successfully updated."
+      redirect_to articles_path
     else
       render :action => 'edit'
     end

@@ -7,13 +7,12 @@ class ArticlesController < ApplicationController
   
   # GET /articles
   def index
-    @articles = Article.all(:order => 'post_date DESC')
-    @year = @articles.group_by { |a| a.post_date.beginning_of_year }
+    @articles = Article.current
   end
   
   # GET /articles/ticker
   def ticker
-    @articles = Article.all(:limit => 5, :order => 'post_date DESC')
+    @articles = Article.current(:limit => 5)
     respond_to do |format|
       format.rss # /articles/ticker.rss
     end

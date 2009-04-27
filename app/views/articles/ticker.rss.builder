@@ -8,7 +8,7 @@ xml.rss :version => '2.0' do
     @articles.each do |article|
       xml.item do
         xml.title article.title
-        xml.description truncate(article.body, :length => 50)
+        xml.description truncate(article.body, :length => 100)
         xml.pubDate article.post_date(:rfc822)
         xml.link article_url(article)
       end

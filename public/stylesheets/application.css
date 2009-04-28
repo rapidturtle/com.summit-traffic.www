@@ -66,7 +66,7 @@ body {
 #menu ul li, #menu ul li a {
 	display: block;
 	float: left;
-	margin: 0 0 14px 0;
+	margin: 0 0 8px 0;
 }
 
 #menu ul li a {
@@ -190,6 +190,22 @@ body {
 	margin-top: 6px;
 }
 
+#body #card {
+	background: transparent url(/images/bkg_ContactInfo.png) no-repeat;
+	height: 230px;
+	margin: 0 20px;
+	padding: 30px 30px 65px 360px;
+	width: 370px;
+}
+
+#body #hero {
+	clear: both;
+	height: 450px;
+	margin: 0 -50px 10px -50px;
+	padding: 0;
+	width: 900px;
+}
+
 #body #y2008 {
 	background: transparent url(/images/year_2008.png) no-repeat;
 	min-height: 250px;
@@ -228,22 +244,6 @@ body {
 #body #y2015 {
 	background: transparent url(/images/year_2015.png) no-repeat;
 	min-height: 250px;
-}
-
-#body #card {
-	background: transparent url(/images/bkg_ContactInfo.png) no-repeat;
-	height: 230px;
-	margin: 0 20px;
-	padding: 30px 30px 65px 360px;
-	width: 370px;
-}
-
-#body #hero {
-	clear: both;
-	height: 450px;
-	margin: 0 -50px 10px -50px;
-	padding: 0;
-	width: 900px;
 }
 
 #body .tab {

@@ -1,8 +1,11 @@
 # This controller handles the login/logout function of the site.  
 class SessionsController < ApplicationController
 
+  before_filter { |c| c.send :set_page_title, ['Session'] }
+  
   # render new.rhtml
   def new
+    @page_title << 'Log In'
   end
 
   def create

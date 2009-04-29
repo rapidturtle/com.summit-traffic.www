@@ -1,7 +1,15 @@
 class UsersController < ApplicationController
-
+  
+  before_filter { |c| c.send :set_page_title, ['Users'] }
+  
+  # GET /users
+  def index
+    @users = User.all
+  end
+  
   # render new.rhtml
   def new
+    @page_title << 'Sign Up'
     @user = User.new
   end
  

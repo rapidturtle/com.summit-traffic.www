@@ -1,6 +1,0 @@
-<tr class="<%= cycle('off', 'on') %>">
-	<td><%=h user.login %></td>
-	<td><%=h user.email %></td>
-	<td class="edit"><%= link_to '>', edit_user_path(user) %></td>
-	<td class="delete"><%= link_to '&times;', user_path(user), :confirm => "Are you sure you want to delete #{user.login}? This cannot be undone.", :method => :delete %></td>
-</tr>

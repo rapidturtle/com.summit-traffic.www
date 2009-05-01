@@ -1,1 +1,10 @@
-<h1 id="page_title">Users</h1>
+<h1 id="page_title">Users<% if logged_in? -%> <%= link_to '+', signup_path %><% end -%></h1>
+<table>
+	<tr>
+		<th>Login</th>
+		<th>Email</th>
+		<th></th>
+		<th></th>
+	</tr>
+	<%= render :partial => @users %>
+</table>

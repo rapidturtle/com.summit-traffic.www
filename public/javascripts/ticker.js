@@ -1,4 +1,5 @@
 // This script is courtesy of Apple, Inc.
+// Requires prototype.js
 
 Effect.DefaultOptions.duration = 0.3;
 NewsTicker = Class.create();

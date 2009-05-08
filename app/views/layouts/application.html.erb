@@ -18,6 +18,13 @@
 		
 		<% if logged_in? -%><div id="admin_bar"></div><% end -%>
 		
+		<% flash.each do |key, msg| -%>
+			<% content_tag(:div, :id => key) do -%>
+				<p><%= msg %></p>
+				<p style="margin-top: 33px; text-align: right;"><span class="button default"><%= link_to('OK', "javascript:document.getElementById('#{key}').style.visibility='hidden';") %></span></p>
+			<% end -%>
+		<% end -%>
+		
 		<div id="banner">
 			<h1><span>Summit Traffic Solutions</span></h1>
 		</div> <!-- END banner -->

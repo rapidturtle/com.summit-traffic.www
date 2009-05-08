@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
   before_filter { |c| c.send :set_page_title, ['News'] }
   before_filter :login_required, :except => [:index, :ticker, :show]
   
-  caches_page :index, :ticker, :show, :new
+  caches_page :ticker, :show
   cache_sweeper :article_sweeper, :only => [:create, :update, :destroy]
   
   # GET /articles

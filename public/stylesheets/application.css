@@ -26,6 +26,28 @@ body {
 	width: 100%;
 }
 
+
+/* FLASH STYLES */
+
+#error, #notice {
+	background: transparent url(/images/bkg_Flash.png);
+	border: 1px solid black;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	color: #ccc;
+	font: 10pt/12pt Verdana;
+	left: 0;
+	margin: auto;
+	padding: 25px 25px 15px 25px;
+	position: fixed;
+	right: 0;
+	text-align: left;
+	top: 75px;
+	width: 350px;
+	z-index: 5;
+}
+
+
 /* BANNER STYLES */
 
 #banner {

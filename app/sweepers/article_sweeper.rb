@@ -10,8 +10,6 @@ class ArticleSweeper < ActionController::Caching::Sweeper
   end
   
   def expire_cache(article)
-    expire_page(articles_path)
-    expire_page(formatted_articles_path(:rss))
     expire_page(formatted_ticker_articles_path(:rss))
     expire_page(article_path(article))
   end

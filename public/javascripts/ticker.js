@@ -1,62 +1,53 @@
-// This script is courtesy of Apple, Inc.
-// Requires prototype.js
-
 Effect.DefaultOptions.duration = 0.3;
+
 NewsTicker = Class.create();
+
 Object.extend(NewsTicker.prototype, {
-	
-	tickerDiv: "ticker", 
-	tickerLocation: "billboard", 
+	tickerDiv: "ticker",
+	// tickerLocation: "billboard",
 	tickerTitle: "news-title",
-	tickerDesc: "news-desc",
-	tickerLink: "/articles/",
+	tickerLink: "/news/",
 	feedURL: "/articles/ticker.rss",
 	pauseLength: 3500,
 	timer: 0,
 	currentTitle: 0,
 	items: null,
+	
 	initialize: function() {
-		
 		this.items = [];
-		
-		new Ajax.Request(
-			this.feedURL, {
-				method: "get",
-				onSuccess: function(response) {
-					this.parseXML(response.responseXML);
-					this.buildTicker();
-				}.bind(this),
-				onFailure: function() {
-					console.log("Please visit http://www.summit-traffic.com/news for the latest news and information on Summit Traffic Solutions.");
-				},
-				onException: function(req, err) {
-					// throw(err);
-				}
-			}
-		);
+		new Ajax.Request(this.feedURL, {
+			method: "get",
+			onSuccess: function(a) {
+				this.parseXML(a.responseXML);
+				this.buildTicker()
+			}.bind(this),
+			onFailure: function() {
+				console.log("Please visit http://www.summit-traffic.com/news for the latest news and information on Summit Traffic Solutions.")
+			},
+			onException: function(b,a) {}
+		})
 	},
 	
 	buildTicker: function() {
-		// replace the placeholder content with the first news title
-		if (this.items[this.currentTitle]) {
-			$(this.tickerTitle).innerHTML = this.items[this.currentTitle]['title'];
-			$(this.tickerDesc).innerHTML = this.items[this.currentTitle]['description'];
-			this.start();// start the timer if we have valid headlines
+		if(this.items[this.currentTitle]) {
+			$(this.tickerTitle).innerHTML = this.items[this.currentTitle]["title"];
+			this.start()
 		}
 	},
 	
-	parseXML: function(xml) {
-		// build the array of news titles
-		$A(xml.getElementsByTagName("item")).each(function(item) {
-			title = item.getElementsByTagName("title")[0].childNodes[0].nodeValue;
-			desc = item.getElementsByTagName("description")[0].childNodes[0].nodeValue;
-			var link = NewsTicker.tickerLink;
-			this.items.push({title: title, description: desc, link: link});
-		}.bind(this));
+	parseXML: function(a) {
+		$A(a.getElementsByTagName("item")).each(function(c) {
+			title = c.getElementsByTagName("title")[0].childNodes[0].nodeValue;
+			var b = NewsTicker.tickerLink;
+			this.items.push({
+				title: title,
+				link: b
+			})
+		}.bind(this))
 	},
 	
 	start: function() {
-		this.interval = setInterval(this.showNext.bind(this), this.pauseLength);
+		this.interval = setInterval(this.showNext.bind(this), this.pauseLength)
 	},
 	
 	stop: function() {
@@ -64,31 +55,27 @@ Object.extend(NewsTicker.prototype, {
 	},
 	
 	showNext: function() {
-		
-		//determine next headline
-		if ( this.currentTitle < this.items.length-1 ) {
-			this.currentTitle = this.currentTitle+1;
+		if(this.currentTitle < this.items.length - 1) {
+			this.currentTitle = this.currentTitle + 1
 		} else {
-			this.currentTitle = 0;
+			this.currentTitle = 0
 		}
-		
-		new Effect.Fade('news-link', {
+		new Effect.Fade("news-title", {
 			afterFinish: function() {
 				this.switchData();
-				new Effect.Appear('news-title');
-				new Effect.Appear('news-desc') }.bind(this)});
- 
+				new Effect.Appear("news-title")
+			}.bind(this)
+		})
 	},
 	
-    switchData: function() {
-		$(this.tickerTitle).setAttribute("href", this.tickerLink);
-		if (this.items[this.currentTitle]) {
-			$(this.tickerTitle).innerHTML = this.items[this.currentTitle]['title'];
-			$(this.tickerTitle).innerHTML = this.items[this.currentTitle]['description'];
+	switchData: function() {
+		// $(this.tickerTitle).setAttribute("href",this.tickerLink);
+		if(this.items[this.currentTitle]) {
+			$(this.tickerTitle).innerHTML = this.items[this.currentTitle]["title"]
 		}
 	}
 });
- 
-Event.observe(window, 'load', function() {
-	var ticker = new NewsTicker();
+
+Event.observe(window, "load", function() {
+	var a = new NewsTicker()
 });

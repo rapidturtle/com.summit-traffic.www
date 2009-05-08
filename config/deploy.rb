@@ -1,7 +1,7 @@
 require 'rt_capistrano'
 
 set :site,         "8898"
-set :application,  "summit-traffic"
+set :application,  "summit_traffic"
 set :webpath,      "summit-traffic.com"
 set :domain,       "eyequeue.us"
 set :user,         "serveradmin%eyequeue.us"

@@ -22,19 +22,11 @@ role :db,  "#{domain}", :primary => true
 set :deploy_to,    "/home/#{site}/containers/rails/#{application}"
 
 namespace :deploy do
-  desc "Creates the database configuration file in the application's config directory."
-  task :update_config, :roles => :app do
-    database_yml = <<-CMD
-      production:
-        adapter: mysql
-        database: db8898_summit-traffic_production
-        username: db8898
-        password: dogVE13@db
-        host: internal-db.s8898.gridserver.com
-    CMD
-    put database_yml, "#{release_path}/config/database.yml"
+  desc "Create symlink to shared files and folders on each release."
+  task :symlink_shared, :roles => :app do
+    run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
   end
-  after "deploy:update_code", "deploy:update_config"
+  after "deploy:update_code", "deploy:symlink_shared"
   
   namespace :web do
     desc "Serve up a custom maintenance page."

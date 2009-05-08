@@ -1,0 +1,11 @@
+# force www IN url
+RewriteCond %{HTTP_HOST} !^www\.summit-traffic\.com [NC]
+RewriteRule ^(.*)$ http://www.summit-traffic.com/$1 [R=301,L]
+# END force www IN url
+
+# MAINTENANCE: Temporary display of maintenance file if it exists
+RewriteCond %{DOCUMENT_ROOT}/system/maintenance.html -f
+RewriteCond %{REQUEST_URI} !\.(css|jpg|gif|png)$
+RewriteCond %{SCRIPT_FILENAME} !maintenance.html
+RewriteRule ^.*$ %{DOCUMENT_ROOT}/system/maintenance.html [L]
+

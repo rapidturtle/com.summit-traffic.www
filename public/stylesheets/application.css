@@ -100,43 +100,43 @@ body {
 }
 
 #menu ul li a#home {
-	background: transparent url(/images/btn_Home_off.png) no-repeat;
+	background: transparent url(/images/btn_Home.png) no-repeat;
 	height: 38px;
 	width: 210px;
 }
 
 #menu ul li a#home:hover, #menu ul li a#home.selected {
-	background: transparent url(/images/btn_Home_on.png) no-repeat;
+	background: transparent url(/images/btn_Home.png) 0 -38px no-repeat;
 }
 
 #menu ul li a#contact {
-	background: transparent url(/images/btn_Contact_off.png) no-repeat;
+	background: transparent url(/images/btn_Contact.png) no-repeat;
 	height: 38px;
 	width: 239px;
 }
 
 #menu ul li a#contact:hover, #menu ul li a#contact.selected {
-	background: transparent url(/images/btn_Contact_on.png) no-repeat;
+	background: transparent url(/images/btn_Contact.png) 0 -38px no-repeat;
 }
 
 #menu ul li a#news {
-	background: transparent url(/images/btn_News_off.png) no-repeat;
+	background: transparent url(/images/btn_News.png) no-repeat;
 	height: 38px;
 	width: 211px;
 }
 
 #menu ul li a#news:hover, #menu ul li a#news.selected {
-	background: transparent url(/images/btn_News_on.png) no-repeat;
+	background: transparent url(/images/btn_News.png) 0 -38px no-repeat;
 }
 
 #menu ul li a#products {
-	background: transparent url(/images/btn_Products_off.png) no-repeat;
+	background: transparent url(/images/btn_Products.png) no-repeat;
 	height: 38px;
 	width: 243px;
 }
 
 #menu ul li a#products:hover, #menu ul li a#products.selected {
-	background: transparent url(/images/btn_Products_on.png) no-repeat;
+	background: transparent url(/images/btn_Products.png) 0 -38px no-repeat;
 }
 
 

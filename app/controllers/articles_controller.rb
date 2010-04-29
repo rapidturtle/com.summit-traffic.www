@@ -8,7 +8,11 @@ class ArticlesController < ApplicationController
   
   # GET /articles
   def index
-    @articles = Article.current
+    if logged_in?
+      @articles = Article.all
+    else
+      @articles = Article.current
+    end
   end
   
   # GET /articles/ticker

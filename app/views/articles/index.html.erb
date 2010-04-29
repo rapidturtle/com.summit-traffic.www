@@ -1,7 +1,7 @@
 <% content_for :links do -%>
 <%= tag :link, :type => 'application/rss+xml', :title => 'RSS', :href => formatted_articles_url(:rss) %>
 <% end -%>
-<h1 id="page_title">News<% if logged_in? -%> <%= link_to '+', new_article_path %><% end -%></h1>
+<h1 id="page_title">News<% if logged_in? -%> <%= link_to '+', new_article_path, :title => 'create a new article' %><% end -%></h1>
 <% @years = @articles.group_by { |a| a.post_date.beginning_of_year } -%>
 <% @years.sort.reverse.each do |year, articles| -%>
 <div class="year" id="y<%= year.strftime('%Y') %>">

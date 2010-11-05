@@ -1,81 +1,99 @@
-Effect.DefaultOptions.duration = 0.3;
-
-NewsTicker = Class.create();
-
-Object.extend(NewsTicker.prototype, {
-	tickerDiv: "ticker",
-	// tickerLocation: "billboard",
-	tickerTitle: "news-title",
-	tickerLink: "/news/",
-	feedURL: "/articles/ticker.rss",
-	pauseLength: 3500,
-	timer: 0,
-	currentTitle: 0,
-	items: null,
-	
-	initialize: function() {
-		this.items = [];
-		new Ajax.Request(this.feedURL, {
-			method: "get",
-			onSuccess: function(a) {
-				this.parseXML(a.responseXML);
-				this.buildTicker()
-			}.bind(this),
-			onFailure: function() {
-				console.log("Please visit http://www.summit-traffic.com/news for the latest news and information on Summit Traffic Solutions.")
-			},
-			onException: function(b,a) {}
-		})
-	},
-	
-	buildTicker: function() {
-		if(this.items[this.currentTitle]) {
-			$(this.tickerTitle).innerHTML = this.items[this.currentTitle]["title"];
-			this.start()
+/*
+ *
+ * Copyright (c) 2006/2007 Sam Collett (http://www.texotela.co.uk)
+ * Licensed under the MIT License:
+ * http://www.opensource.org/licenses/mit-license.php
+ * 
+ * Version 2.0
+ * Demo: http://www.texotela.co.uk/code/jquery/newsticker/
+ *
+ * $LastChangedDate$
+ * $Rev$
+ *
+ */
+ 
+(function($) {
+/*
+ * A basic news ticker.
+ *
+ * @name     newsticker (or newsTicker)
+ * @param    delay      Delay (in milliseconds) between iterations. Default 4 seconds (4000ms)
+ * @author   Sam Collett (http://www.texotela.co.uk)
+ * @example  $("#news").newsticker(); // or $("#news").newsTicker(5000);
+ *
+ */
+$.fn.newsTicker = $.fn.newsticker = function(delay)
+{
+	delay = delay || 4000;
+	initTicker = function(el)
+	{
+		stopTicker(el);
+		el.items = $("li", el);
+		// hide all items (except first one)
+		el.items.not(":eq(0)").hide().end();
+		// current item
+		el.currentitem = 0;
+		startTicker(el);
+	};
+	startTicker = function(el)
+	{
+		el.tickfn = setInterval(function() { doTick(el) }, delay)
+	};
+	stopTicker = function(el)
+	{
+		clearInterval(el.tickfn);
+	};
+	pauseTicker = function(el)
+	{
+		el.pause = true;
+	};
+	resumeTicker = function(el)
+	{
+		el.pause = false;
+	};
+	doTick = function(el)
+	{
+		// don't run if paused
+		if(el.pause) return;
+		// pause until animation has finished
+		el.pause = true;
+		// hide current item
+		$(el.items[el.currentitem]).fadeOut("slow",
+			function()
+			{
+				$(this).hide();
+				// move to next item and show
+				el.currentitem = ++el.currentitem % (el.items.size());
+				$(el.items[el.currentitem]).fadeIn("slow",
+					function()
+					{
+						el.pause = false;
+					}
+				);
+			}
+		);
+	};
+	this.each(
+		function()
+		{
+			if(this.nodeName.toLowerCase()!= "ul") return;
+			initTicker(this);
 		}
-	},
-	
-	parseXML: function(a) {
-		$A(a.getElementsByTagName("item")).each(function(c) {
-			title = c.getElementsByTagName("title")[0].childNodes[0].nodeValue;
-			var b = NewsTicker.tickerLink;
-			this.items.push({
-				title: title,
-				link: b
-			})
-		}.bind(this))
-	},
-	
-	start: function() {
-		this.interval = setInterval(this.showNext.bind(this), this.pauseLength)
-	},
-	
-	stop: function() {
-		clearInterval(this.interval)
-	},
-	
-	showNext: function() {
-		if(this.currentTitle < this.items.length - 1) {
-			this.currentTitle = this.currentTitle + 1
-		} else {
-			this.currentTitle = 0
+	)
+	.addClass("newsticker")
+	.hover(
+		function()
+		{
+			// pause if hovered over
+			pauseTicker(this);
+		},
+		function()
+		{
+			// resume when not hovered over
+			resumeTicker(this);
 		}
-		new Effect.Fade("news-title", {
-			afterFinish: function() {
-				this.switchData();
-				new Effect.Appear("news-title")
-			}.bind(this)
-		})
-	},
-	
-	switchData: function() {
-		// $(this.tickerTitle).setAttribute("href",this.tickerLink);
-		if(this.items[this.currentTitle]) {
-			$(this.tickerTitle).innerHTML = this.items[this.currentTitle]["title"]
-		}
-	}
-});
+	);
+	return this;
+};
 
-Event.observe(window, "load", function() {
-	var a = new NewsTicker()
-});
+})(jQuery);

@@ -1,17 +1,27 @@
 <% content_for :meta do -%>
 <%= tag :meta, 'http-equiv'.to_sym => 'pragma', :content => 'no-cache' %>
-<% end -%>
-<% content_for :scripts do -%>
-<%= javascript_include_tag :defaults, 'ticker' %>
-<% end -%>
+<%- end -%>
+<%- content_for :scripts do -%>
+<%= javascript_include_tag 'jquery', 'ticker' %>
+<%- javascript_tag do -%>
+	$(function() {
+		if ($("#news-links li").length > 1) $("#news-links").newsTicker();
+	});
+<%- end -%>
+<%- end -%>
 <div id="hero">
 	<%= link_to image_tag('hero.png', :alt => 'Dilemma zone protection from Wavetronix'), contact_path %>
 </div> <!-- END hero -->
 
 <div class="panel_row">
 	<div id="ticker" class="news panel">
-		<h3 id="news-title">Read the latest news and information on Summit Traffic Solutions</h3>
-		<p><span id="news-desc"></span><br /><%= link_to 'Read more', articles_path, :class => 'read_more' %></p>
+		<ul id="news-links">
+			<%- if !@articles.blank? -%>
+				<%= render :partial => "article", :collection => @articles %>
+			<%- else -%>
+				<li><%= link_to 'Read the latest news and information from Summit Traffic Solutions.', articles_path %></li>
+			<%- end -%>
+		</ul>
 	</div> <!-- END panel -->
 	
 	<div class="panel">

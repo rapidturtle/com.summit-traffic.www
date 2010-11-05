@@ -322,6 +322,19 @@ body {
 }
 
 
+/* NEWS TICKER STYLES */
+
+#news-links {
+	list-style: none;
+	margin: 10px;
+	padding: 0;
+}
+
+#news-links a:hover {
+	text-decoration: none;
+}
+
+
 /* FOOTER STYLES */
 
 #footer {
@@ -393,9 +406,10 @@ body {
 }
 
 .read_more {
-	background: transparent url(/images/li_Bullet.png) no-repeat 0 4px;
-	font-size: 12px;
+	background: transparent url(/images/li_Bullet.png) no-repeat 0 6px;
+	font-size: 12px !important;
 	padding-left: 15px;
+	text-transform: uppercase;
 }
 
 .year {

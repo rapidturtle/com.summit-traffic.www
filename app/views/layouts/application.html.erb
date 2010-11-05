@@ -16,14 +16,14 @@
 	</head>
 	<body>
 		
-		<% if logged_in? -%><div id="admin_bar"></div><% end -%>
+		<%- if logged_in? -%><div id="admin_bar"></div><%- end -%>
 		
-		<% flash.each do |key, msg| -%>
-			<% content_tag(:div, :id => key) do -%>
+		<%- flash.each do |key, msg| -%>
+			<%- content_tag(:div, :id => key) do -%>
 				<p><%= msg %></p>
 				<p style="margin-top: 33px; text-align: right;"><span class="button default"><%= link_to('OK', "javascript:document.getElementById('#{key}').style.visibility='hidden';") %></span></p>
-			<% end -%>
-		<% end -%>
+			<%- end -%>
+		<%- end -%>
 		
 		<div id="banner">
 			<h1><span>Summit Traffic Solutions</span></h1>
@@ -44,21 +44,21 @@
 		
 		<div id="footer">
 			<div id="copyright"><%= image_tag 'footer_logo.png', :alt => 'Summit Traffic Solutions' %>&emsp;&copy; 2009 Summit Traffic Solutions. All rights reserved.</div>
-			<div id="links"><%= link_to 'Home', root_path %> | <%= link_to 'Products', products_path %> | <%= link_to 'News', articles_path %> | <%= link_to 'Contact', contact_path %> | <% if logged_in? -%><%= link_to 'Users', users_path %> | <%= link_to 'Logout', logout_path %><% else -%><%= link_to 'Login', login_path %><% end -%></div>
+			<div id="links"><%= link_to 'Home', root_path %> | <%= link_to 'Products', products_path %> | <%= link_to 'News', articles_path %> | <%= link_to 'Contact', contact_path %> | <%- if logged_in? -%><%= link_to 'Users', users_path %> | <%= link_to 'Logout', logout_path %><%- else -%><%= link_to 'Login', login_path %><%- end -%></div>
 		</div> <!-- END footer -->
 		
 		<!-- BEGIN Google Analytics code -->
 		
-		<% javascript_tag do %>
+		<%- javascript_tag do -%>
 			var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 			document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-		<% end %>
-		<% javascript_tag do %>
+		<%- end -%>
+		<%- javascript_tag do -%>
 			try {
 				var pageTracker = _gat._getTracker("UA-519048-8");
 				pageTracker._trackPageview();
 			} catch(err) {}
-		<% end %>
+		<%- end -%>
 		
 		<!-- END Google Analytics code -->
 	</body>

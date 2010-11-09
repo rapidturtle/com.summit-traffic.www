@@ -407,9 +407,9 @@ body {
 
 .read_more {
 	background: transparent url(/images/li_Bullet.png) no-repeat 0 6px;
+	color: #09f !important;
 	font-size: 12px !important;
 	padding-left: 15px;
-	text-transform: uppercase;
 }
 
 .year {

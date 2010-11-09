@@ -4,7 +4,7 @@ set :site,         "8898"
 set :application,  "summit_traffic"
 set :webpath,      "summit-traffic.com"
 set :domain,       "eyequeue.us"
-set :user,         "serveradmin%eyequeue.us"
+set :user,         "serveradmin@eyequeue.us"
 set :password,     "moly8}oohing"
 set :use_sudo,      false
 

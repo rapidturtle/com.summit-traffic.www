@@ -5,7 +5,7 @@ set :application,  "summit_traffic"
 set :webpath,      "summit-traffic.com"
 set :domain,       "eyequeue.us"
 set :user,         "serveradmin@eyequeue.us"
-set :password,     "moly8}oohing"
+set :password,     "moly8_oohing"
 set :use_sudo,      false
 
 # repository elsewhere

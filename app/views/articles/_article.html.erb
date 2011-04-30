@@ -1,2 +1,0 @@
-<h3><%=h article.title %> <%= content_tag :span, "(#{article.post_date.strftime('%b %d, %Y')})", :class => 'article_date' %><% if logged_in? -%> <%= link_to '&hellip;', edit_article_path(article), :title => 'edit this article' %> <%= link_to '&times;', article_path(article), :confirm => "Are you sure you want to delete #{article.title}?", :method => :delete, :title => 'delete this article' %><% end -%></h3>
-<%= simple_format(article.body) %>

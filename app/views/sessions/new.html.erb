@@ -1,0 +1,9 @@
+<% title "Sign in" %>
+
+<%= form_tag sessions_path do %>
+	<h4><%= label_tag :email %></h4>
+	<p><%= email_field_tag :email, params[:email], :style => "width: 300px;", :placeholder => "name@example.com" %></p>
+	<h4><%= label_tag :password %></h4>
+	<p><%= password_field_tag :password, "", :style => "width: 300px;", :placeholder => "password" %></p>
+	<p><%= submit_tag "Sign in", :class => "button" %></p>
+<% end %>

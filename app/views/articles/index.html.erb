@@ -1,0 +1,18 @@
+<% title "News" %>
+<% content_for :head do %>
+<%= tag :link, :type => 'application/rss+xml', :title => 'RSS', :href => articles_url(:rss) %>
+<% end %>
+
+<% if current_user %>
+<h2><%= link_to "+", new_article_path, :class => "button", :title => "add a new article" %></h2>
+<% end %>
+<% @articles.group_by { |a| a.post_date.beginning_of_year }.each do |year, articles| %>
+<div class="year" id="y<%= year.strftime('%Y') %>">
+	<% articles.group_by { |a| a.post_date.beginning_of_month }.each do |month, articles| -%>
+	<h2><%= month.strftime('%B') %></h2>
+	<%= render articles %>
+	<% end -%>
+</div> <!-- END year y<%= year.strftime('%Y') %> -->
+<% end %>
+
+<% javascript :defaults %>

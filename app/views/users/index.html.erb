@@ -1,0 +1,15 @@
+<% title "User Accounts" %>
+<h2><%= link_to "+", new_user_path, :class => "button", :title => "add a new user" %></h2>
+<table>
+	<thead>
+		<tr>
+			<th style="width: 97%">Email</th>
+			<th style="width: 3%"></th>
+		</tr>
+	</thead>
+	<tbody>
+		<%= render @users %>
+	</tbody>
+</table>
+
+<% javascript :defaults %>

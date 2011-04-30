@@ -1,0 +1,6 @@
+<%= error_handling_form_for @user do |f| %>
+	<%= f.email_field :email, :placeholder => "name@example.com", :style => "width: 300px" %>
+	<%= f.password_field :password, :placeholder => "password", :style => "width: 300px" %>
+	<%= f.password_field :password_confirmation, :placeholder => "password", :style => "width: 300px" %>
+	<%= f.submit "Save user" %>
+<% end %>

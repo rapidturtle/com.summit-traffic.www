@@ -8,12 +8,12 @@ set :use_sudo, false
 
 # application details
 set :application, "summit-traffic"
-set :deploy_to, "/usr/deploy/#{application}"
+set :deploy_to, "/home/deploy/#{application}"
 
 # git info
 set :scm, :git
 set :repository,  "git@home.eyequeue.us:Repositories/summit-traffic.git"
-set :branch, "master"
+set :branch, "rel1.1"
 set :deploy_via, :remote_cache
 
 # servers

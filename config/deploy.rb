@@ -24,7 +24,7 @@ set :deploy_via, :remote_cache
 # servers
 role :web, "ve.eyequeue.us"
 role :app, "ve.eyequeue.us"
-# role :db,  "external-db.s8898.gridserver.com", :primary => true
+role :db,  "ve.eyequeue.us", :primary => true
 
 # If you are using Passenger mod_rails uncomment this:
 namespace :deploy do

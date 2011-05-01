@@ -1,3 +1,5 @@
+$:.unshift(File.expand_path('./lib', ENV['rvm_path'])) # Add RVM's lib directory to the load path.
+require 'rvm/capistrano'
 require 'bundler/capistrano'
 
 default_run_options[:pty]   = true
@@ -9,6 +11,7 @@ set :user, "deploy"
 set :use_sudo, false
 
 # application details
+set :rvm_ruby_string, '1.9.2'
 set :application, "summit-traffic"
 set :deploy_to, "/home/deploy/#{application}"
 

@@ -3,7 +3,7 @@ require 'bundler/capistrano'
 default_run_options[:pty]   = true
 ssh_options[:forward_agent] = true
 
-# login credentials
+# user settings
 set :user, "deploy"
 # set :password, "password"
 set :use_sudo, false
@@ -30,4 +30,9 @@ namespace :deploy do
   task :restart, :roles => :app, :except => { :no_release => true } do
     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
   end
+  desc "Create symlink to shared files and folders on each release."
+  task :symlink_shared do
+    run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
+  end
+  after "deploy:update_code", "deploy:symlink_shared"
 end

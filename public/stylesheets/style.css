@@ -87,7 +87,7 @@ a, a:active, a:visited { color: #09f; }
 */
 
 /* TAGS */
-body { background: #fff url(/images/bkg_page.png) repeat-x; font-family: Verdana; }
+body { background: #fff url(/images/bkg_Page.png) repeat-x; font-family: Verdana; }
 a { color: #09f; text-decoration: none; }
 a:hover { text-decoration: underline; }
 input, select, textarea { font-family: Verdana; }

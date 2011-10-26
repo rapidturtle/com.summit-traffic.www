@@ -1,8 +1,9 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.7'
+gem 'rails', '3.0.10'
 
-gem 'mysql2'
+gem 'sqlite3', :groups => [:development, :test]
+gem 'mysql2', :group   => :production
 
 # Deploy with Capistrano
 gem 'capistrano'
@@ -10,10 +11,3 @@ gem 'capistrano'
 # Bundle the extra gems:
 gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'jquery-rails'
-
-# Bundle gems for the local environment. Make sure to
-# put test-only gems in this group so their generators
-# and rake tasks are available in development mode:
-# group :development, :test do
-#   gem 'webrat'
-# end

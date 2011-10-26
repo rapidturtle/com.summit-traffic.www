@@ -1,41 +1,46 @@
-$:.unshift(File.expand_path('./lib', ENV['rvm_path'])) # Add RVM's lib directory to the load path.
+$:.unshift(File.expand_path('./lib', ENV['rvm_path']))
 require 'rvm/capistrano'
 require 'bundler/capistrano'
 
 default_run_options[:pty]   = true
 ssh_options[:forward_agent] = true
 
+set :rvm_ruby_string, "1.9.2@summit-traffic"
+
+# repository elsewhere
+set :scm,        :git
+set :repository, "git@home.eyequeue.us:Repositories/summit-traffic.git"
+set :deploy_via, :remote_cache
+
 # user settings
-set :user, "deploy"
-# set :password, "password"
+set :user,     "deploy"
 set :use_sudo, false
 
 # application details
-set :rvm_ruby_string, '1.9.2'
 set :application, "summit-traffic"
+
+set :domain,    "ve.eyequeue.us"
 set :deploy_to, "/home/deploy/#{application}"
+set :rails_env, "production"
 
-# git info
-set :scm, :git
-set :repository,  "git@home.eyequeue.us:Repositories/summit-traffic.git"
-set :branch, "rel1.1"
-set :deploy_via, :remote_cache
+role :app, "#{domain}"
+role :web, "#{domain}"
+role :db,  "#{domain}", :primary => true
 
-# servers
-role :web, "ve.eyequeue.us"
-role :app, "ve.eyequeue.us"
-role :db,  "ve.eyequeue.us", :primary => true
-
-# If you are using Passenger mod_rails uncomment this:
 namespace :deploy do
   task :start do ; end
   task :stop do ; end
   task :restart, :roles => :app, :except => { :no_release => true } do
     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
   end
-  desc "Create symlink to shared files and folders on each release."
-  task :symlink_shared do
-    run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
+  
+  namespace :config do
+    desc "Create symlink to shared files and folders on each release."
+    task :symlink do
+      # run "ln -nfs #{shared_path}/config/aws.yml #{release_path}/config/aws.yml"
+      run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
+    end
   end
-  after "deploy:update_code", "deploy:symlink_shared"
+  
+  after "deploy:update_code", "deploy:config:symlink"
 end

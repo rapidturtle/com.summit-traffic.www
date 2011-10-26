@@ -1,4 +1,4 @@
-rvm 1.9.2
+rvm 1.9.2@summit-traffic
 
 if ! command -v bundle ; then
 	gem install bundler

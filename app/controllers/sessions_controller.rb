@@ -4,15 +4,15 @@ class SessionsController < ApplicationController
   end
   
   def create
-    user = User.authenticate(params[:email], params[:password])
-    if user
+    user = User.find_by_email(params[:email])
+    if user && user.authenticate(params[:password])
       session[:user_id] = user.id
       uri = session[:return_to]
       session[:return_to] = nil
       flash[:notice] = "Signed in!"
-      redirect_to uri rescue redirect_to root_path
+      redirect_to uri rescue redirect_to subscribers_path
     else
-      flash.now.alert = "Incorrect email address or password."
+      flash.now.alert = "Invalid email or password"
       render :new
     end
   end

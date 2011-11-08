@@ -29,6 +29,8 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'capistrano'
 # gem 'capistrano-ext'
 
+gem 'rails_autolink'
+
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 

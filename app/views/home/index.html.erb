@@ -1,8 +1,5 @@
-<% content_for :head do %>
-<%= tag :meta, 'http-equiv'.to_sym => 'pragma', :content => 'no-cache' %>
-<% end %>
 <div id="hero">
-', :alt => 'Dilemma zone protection from Wavetronix'), contact_path %>
+	<%= link_to image_tag('hero_Matrix.png', :alt => 'Dilemma zone protection from Wavetronix'), contact_path %>
 </div> <!-- END hero -->
 
 <div class="panel_row">
@@ -24,12 +21,3 @@
 		<%= link_to image_tag('panel_iMPathEncoder.png', :alt => 'iMPath Networks'), 'http://www.impathnetworks.com', :target => '_blank' %>
 	</div> <!-- END panel -->
 </div> <!-- END panel_row -->
-
-<% javascript :ticker %>
-<% content_for :script do %>
-<script type="text/javascript">
-	$(function() {
-		if ($("#news-links li").length > 1) $("#news-links").newsTicker();
-	});
-</script>
-<% end %>

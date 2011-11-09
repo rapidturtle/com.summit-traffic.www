@@ -1,5 +1,6 @@
 .DS_Store
 .bundle
+.powenv
 .sass-cache
 config/database.yml
 db/*.sqlite3

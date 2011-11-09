@@ -9,7 +9,7 @@ set :rvm_ruby_string, "1.9.2@summit-traffic"
 
 # repository elsewhere
 set :scm,        :git
-set :repository, "git@home.eyequeue.us:Repositories/summit-traffic.git"
+set :repository, "git@github.com:rapidturtle/com.summit-traffic.www.git"
 set :deploy_via, :remote_cache
 
 # user settings

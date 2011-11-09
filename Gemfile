@@ -42,3 +42,8 @@ group :test do
   gem 'guard-pow'
   gem 'guard-rspec'
 end
+
+group :production do
+  gem 'execjs'
+  gem 'therubyracer'
+end

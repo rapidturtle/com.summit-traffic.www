@@ -43,4 +43,5 @@ namespace :deploy do
   end
   
   after "deploy:update_code", "deploy:config:symlink"
+  before "assets:precompile", "deploy:config:symlink"
 end

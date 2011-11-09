@@ -1,7 +1,4 @@
 <% title "News" %>
-<% content_for :head do %>
-<%= tag :link, :type => 'application/rss+xml', :title => 'RSS', :href => articles_url(:rss) %>
-<% end %>
 
 <% if current_user %>
 <h2><%= link_to "+", new_article_path, :class => "button", :title => "add a new article" %></h2>
@@ -14,5 +11,3 @@
 	<% end -%>
 </div> <!-- END year y<%= year %> -->
 <% end %>
-
-<% javascript :defaults %>

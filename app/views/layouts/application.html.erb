@@ -13,11 +13,9 @@
 	
 	<link rel="shortcut icon" href="/favicon.ico">
 	<link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <%= stylesheet_link_tag :all %>
+  <%= stylesheet_link_tag 'application' %>
 
 	<%= javascript_include_tag "modernizr-1.7.min" %>
-	
-	<%= yield :head %>
 </head>
 <body>
 	<% if current_user %>
@@ -69,9 +67,8 @@
 		</nav>
 	</footer> <!-- END footer -->
 
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
-	<script>!window.jQuery && document.write(unescape('%3Cscript src="/javasctipts/jquery.min.js"%3E%3C/script%3E'))</script>
-	<%= yield :script %>
+	<%= javascript_include_tag 'application' %>
+	
 	<script>
 		var _gaq=[['_setAccount','UA-519048-8'],['_trackPageview']];
 		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;

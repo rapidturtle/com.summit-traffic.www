@@ -5,8 +5,8 @@ gem 'rails', '3.2.0'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3', :groups => [:development, :test]
-gem 'mysql2', :group => :production
+gem 'sqlite3', groups: [:development, :test]
+gem 'pg',      groups: [:staging, :production]
 
 
 # Gems used only for assets and not required
@@ -43,7 +43,7 @@ group :test do
   gem 'guard-rspec'
 end
 
-group :production do
+group :staging, :production do
   gem 'execjs'
   gem 'therubyracer'
 end

@@ -27,7 +27,7 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Deploy with Capistrano
 gem 'capistrano'
-# gem 'capistrano-ext'
+gem 'capistrano-ext'
 
 gem 'rails_autolink'
 

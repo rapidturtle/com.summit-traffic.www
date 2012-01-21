@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   
+  before_filter :authenticate_if_staging
+  
 private
 
   def authenticate!
@@ -18,5 +20,13 @@ private
   
   def store_location
     session[:return_to] = request.fullpath
+  end
+  
+  def authenticate_if_staging
+    if request.domain == "rapidturtle.com"
+      authenticate_or_request_with_http_basic do |name, password|
+        name == 'summit' && password == 'summit'
+      end
+    end
   end
 end

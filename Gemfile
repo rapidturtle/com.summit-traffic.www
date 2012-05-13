@@ -1,12 +1,11 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.2.0'
+gem 'rails', '3.2.3'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3', groups: [:development, :test]
-gem 'pg',      groups: [:staging, :production]
+gem 'pg'
 
 
 # Gems used only for assets and not required
@@ -23,7 +22,7 @@ gem 'jquery-rails'
 gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Use unicorn as the web server
-# gem 'unicorn'
+gem 'unicorn', groups: [:staging, :production]
 
 # Deploy with Capistrano
 gem 'capistrano'
@@ -41,9 +40,4 @@ group :test do
   gem 'factory_girl_rails'
   gem 'guard-pow'
   gem 'guard-rspec'
-end
-
-group :staging, :production do
-  gem 'execjs'
-  gem 'therubyracer'
 end

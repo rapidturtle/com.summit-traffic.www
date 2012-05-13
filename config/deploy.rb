@@ -7,16 +7,7 @@ require 'capistrano/ext/multistage'
 default_run_options[:pty]   = true
 ssh_options[:forward_agent] = true
 
-$:.unshift(File.expand_path('./lib', ENV['rvm_path']))
-require 'rvm/capistrano'
-set :rvm_ruby_string, "1.9.3@com.summit-traffic.www"
-
 require 'bundler/capistrano'
-
-# repository elsewhere
-set :scm,        :git
-set :repository, "git@github.com:rapidturtle/com.summit-traffic.www.git"
-set :deploy_via, :remote_cache
 
 # user settings
 set :use_sudo, false
@@ -25,26 +16,44 @@ set :use_sudo, false
 set :application, "com.summit-traffic.www"
 set :domain,      "ve.eyequeue.us"
 
-role :app, "#{domain}"
-role :web, "#{domain}"
-role :db,  "#{domain}", :primary => true
+# repository elsewhere
+set :scm,        :git
+set :repository, "git@github.com:rapidturtle/com.summit-traffic.www.git"
+set :deploy_via, :remote_cache
+
+server "#{domain}", :app, :web, :db, primary: true
 
 namespace :deploy do
-  task :start do ; end
-  task :stop do ; end
-  task :restart, :roles => :app, :except => { :no_release => true } do
-    run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
+  %w[start stop restart].each do |command|
+    desc "#{command.capitalize} unicorn server"
+    task command, roles: :app, except: { no_release: true } do
+      run "/etc/init.d/unicorn_#{application} #{command}"
+    end
   end
+  
+  task :setup_config, roles: :app do
+    run "mkdir -p #{shared_path}/config"
+    run "mkdir -p #{shared_path}/public/uploads"
+
+    put File.read("config/database.example.yml"), "#{shared_path}/config/database.yml"
+    put File.read("config/nginx.example.conf"), "#{shared_path}/config/nginx.conf"
+    put File.read("config/unicorn_init.example.sh"), "#{shared_path}/config/unicorn_init.sh"
+
+    sudo "ln -nfs #{shared_path}/config/nginx.conf /usr/local/nginx/sites-enabled/#{application}.conf"
+    sudo "ln -nfs #{shared_path}/config/unicorn_init.sh /etc/init.d/unicorn_#{application}"
+
+    puts "Now edit the config files in #{shared_path}."
+  end
+  after "deploy:setup", "deploy:setup_config"
   
   namespace :config do
     desc "Create symlink to shared files and folders on each release."
     task :symlink do
       run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
-      # run "ln -nfs #{shared_path}/config/unicorn.rb #{release_path}/config/unicorn.rb"
-      # run "ln -nfs #{shared_path}/config/unicorn_init.sh #{release_path}/config/unicorn_init.sh"
+      run "ln -nfs #{shared_path}/public/uploads #{release_path}/public/uploads"
     end
   end
-  
-  # after "deploy:update_code", "deploy:config:symlink"
-  before "deploy:assets:precompile", "deploy:config:symlink"
+
+  after "deploy:finalize_update", "deploy:config:symlink"
+  after "deploy:restart", "deploy:cleanup"
 end

@@ -1,7 +1,0 @@
-rvm 1.9.3@com.summit-traffic.www
-
-if ! command -v bundle ; then
-	gem install bundler
-fi
-
-rvm_project_rvmrc_default=1

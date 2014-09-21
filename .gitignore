@@ -1,9 +1,16 @@
-.DS_Store
-.bundle
-.powenv
-.sass-cache
-config/database.yml
-db/*.sqlite3
-log/*.log
-public/assets/
-tmp/
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+/.bundle
+/.sass-cache
+/config/application.yml
+/config/aws.yml
+/config/database.yml
+/config/initializers/secret_token.rb
+/config/secrets.yml
+/config/unicorn_init.sh
+/db/*.sqlite3
+/log
+/public/assets
+/public/system
+/public/uploads
+/tmp
+/vendor/bundle

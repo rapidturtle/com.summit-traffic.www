@@ -1,12 +1,14 @@
+ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
+
 # Simple Role Syntax
 # ==================
 # Supports bulk-adding hosts to roles, the primary server in each group
 # is considered to be the first unless any hosts have the primary
 # property set.  Don't declare `role :all`, it's a meta role.
 
-role :app, %w{deploy@example.com}
-role :web, %w{deploy@example.com}
-role :db,  %w{deploy@example.com}
+# role :app, %w{deploy@example.com}
+# role :web, %w{deploy@example.com}
+# role :db,  %w{deploy@example.com}
 
 
 # Extended Server Syntax
@@ -43,3 +45,6 @@ server 'example.com', user: 'deploy', roles: %w{web app}, my_property: :my_value
 #     auth_methods: %w(publickey password)
 #     # password: 'please use keys'
 #   }
+
+fetch(:default_env).merge!(rails_env: :staging)
+set :bundle_without, %w[development test production].join(' ')

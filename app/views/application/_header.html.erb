@@ -1,15 +1,17 @@
-<nav class="top-bar" data-topbar role="navigation">
-  <ul class="title-area">
-    <li class="name">
-      <h1><a href="#">Summit Traffic Solutions</a></h1>
-    </li>
-    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-  </ul>
-  <section class="top-bar-section">
-    <ul class="left">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Products</a></li>
-      <li><a href="#">Contact Us</a></li>
+<div class="contain-to-grid">
+  <nav class="top-bar" data-topbar role="navigation">
+    <ul class="title-area">
+      <li class="name">
+        <h1><a href="#">Summit Traffic Solutions</a></h1>
+      </li>
+      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
     </ul>
-  </section>
-</nav>
+    <section class="top-bar-section">
+      <ul class="left">
+        <li><%= link_to 'Home', root_path %></li>
+        <li><%= link_to 'Products', products_path %></li>
+        <li><%= link_to 'Contact Us', contact_path %></li>
+      </ul>
+    </section>
+  </nav>
+</div>

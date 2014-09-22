@@ -5,4 +5,14 @@ class StaticPagesControllerTest < ActionController::TestCase
     get :index
     assert_response :success
   end
+
+  test "gets products" do
+    get :products
+    assert_response :success
+  end
+
+  test "gets contact" do
+    get :contact
+    assert_response :success
+  end
 end

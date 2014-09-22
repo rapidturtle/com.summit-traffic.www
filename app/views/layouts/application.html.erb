@@ -15,8 +15,12 @@
 
   <body>
     <%= render 'header' %>
-    <%= yield %>
-    <%= render 'footer' %>
+    <div class="row">
+      <div class="large-12 columns">
+        <%= yield %>
+        <%= render 'footer' %>
+      </div>
+    </div>
     <%= javascript_include_tag "application" %>
   </body>
 </html>

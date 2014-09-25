@@ -15,18 +15,10 @@
  *= require foundation_and_overrides
  */
 
-.top-bar {
-  .title-area {
-    .name {
-      h1 {
-        a {
-          background: image-url('icon.png') no-repeat 0 50%;
-          margin-left: 15px;
-          padding-left: 23px;
-        }
-      }
-    }
-  }
+#site-icon {
+  background: image-url('icon.png') no-repeat 0 50%;
+  margin-left: 15px;
+  padding-left: 23px;
 }
 
 #site-footer {

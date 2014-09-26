@@ -1,4 +1,19 @@
-<div class="contain-to-grid">
+<nav class="tab-bar hide-for-medium-up">
+  <section class="left-small">
+    <%= link_to content_tag(:span), nil, class: 'left-off-canvas-toggle menu-icon' %>
+  </section>
+  <section class="middle tab-bar-section">
+    <h1 class="title"><span id="site-icon">Summit Traffic Solutions</span></h1>
+  </section>
+</nav>
+<aside class="left-off-canvas-menu">
+  <ul class="off-canvas-list">
+    <li><%= link_to 'Home', root_path %></li>
+    <li><%= link_to 'Products', products_path %></li>
+    <li><%= link_to 'Contact Us', contact_path %></li>
+  </ul>
+</aside>
+<div class="contain-to-grid show-for-medium-up">
   <nav class="top-bar" data-topbar role="navigation">
     <ul class="title-area">
       <li class="name">

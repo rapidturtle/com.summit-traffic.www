@@ -1,8 +1,8 @@
 <% content_for :title, 'Products' %>
 <h1>Products</h1>
-<ul class="medium-block-grid-3 small-block-grid-1">
+<ul id="manufacturers" class="medium-block-grid-3 small-block-grid-1">
   <li>
-    <h2>Wavetronix</h2>
+    <h2><%= link_to 'Wavetronix', 'http://www.wavetronix.com/', target: '_blank' %></h2>
     <ul>
       <li>connectivity devices</li>
       <li>data appliances</li>
@@ -10,7 +10,7 @@
     </ul>
   </li>
   <li>
-    <h2>iMPath Networks</h2>
+    <h2><%= link_to 'iMPath Networks', 'http://www.impathnetworks.com/', target: '_blank' %></h2>
     <ul>
       <li>cameras</li>
       <li>encoders/decoders</li>
@@ -19,20 +19,20 @@
     </ul>
   </li>
   <li>
-    <h2>Camera Lowering Systems</h2>
+    <h2><%= link_to 'Camera Lowering Systems', 'http://www.cameralowering.com/', target: '_blank' %></h2>
     <ul>
       <li>camera lowering systems</li>
     </ul>
   </li>
   <li>
-    <h2>Tesco</h2>
+    <h2><%= link_to 'Tesco', 'http://www.tescocontrols.com/traffic.htm', target: '_blank' %></h2>
     <ul>
       <li>service pedestals</li>
       <li>traffic signal battery backup</li>
     </ul>
   </li>
   <li>
-    <h2>Vicon Industries</h2>
+    <h2><%= link_to 'Vicon Industries', 'http://www.vicon-cctv.com/', target: '_blank' %></h2>
     <ul>
       <li>camera dome systems</li>
       <li>digital video and IP solutions</li>

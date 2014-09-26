@@ -15,6 +15,34 @@
  *= require foundation_and_overrides
  */
 
+.debug_dump {
+  background-color: #eee;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  color: #666;
+  font-family: 'Source Code Pro';
+  font-weight: normal;
+  font-size: 13px;
+  padding: 30px;
+}
+
+.off-canvas-wrap, .inner-wrap {
+  min-height: 100%;
+}
+
+.off-canvas-wrap {
+  height: 100%;
+  overflow-y: auto;
+}
+
+#manufacturers {
+  li {
+    h2 {
+      font-size: 1.2rem;
+    }
+  }
+}
+
 #site-icon {
   background: image-url('icon.png') no-repeat 0 50%;
   margin-left: 15px;
@@ -25,15 +53,7 @@
   border-top: 1px solid #ccc;
   margin-top: 1rem;
   padding-top: 1rem;
-}
-
-.debug_dump {
-  background-color: #eee;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  color: #666;
-  font-family: 'Source Code Pro';
-  font-weight: normal;
-  font-size: 13px;
-  padding: 30px;
+  p {
+    font-size: 0.8rem;
+  }
 }

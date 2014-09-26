@@ -67,7 +67,6 @@ GEM
     coffee-script-source (1.8.0)
     colorize (0.7.3)
     columnize (0.8.9)
-    database_cleaner (1.3.0)
     debug_inspector (0.0.2)
     debugger-linecache (1.2.0)
     erubis (2.7.0)
@@ -113,8 +112,6 @@ GEM
     method_source (0.8.2)
     mime-types (2.3)
     mini_portile (0.6.0)
-    miniskirt (1.2.1)
-      activesupport
     minitest (5.4.1)
     multi_json (1.10.1)
     net-scp (1.2.1)
@@ -122,7 +119,6 @@ GEM
     net-ssh (2.9.1)
     nokogiri (1.6.3.1)
       mini_portile (= 0.6.0)
-    pg (0.17.1)
     pry (0.10.1)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -216,15 +212,12 @@ DEPENDENCIES
   capistrano-rails
   capistrano-rbenv
   coffee-rails (~> 4.0.0)
-  database_cleaner
   foundation-rails
   guard-minitest
   guard-pow
   jbuilder (~> 2.0)
   jquery-rails
-  miniskirt
   minitest
-  pg
   rails (= 4.2.0.beta1)
   rails-html-sanitizer (~> 1.0)
   sass-rails (~> 5.0.0.beta1)

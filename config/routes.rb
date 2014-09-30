@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
   get 'contact', to: 'static_pages#contact', as: 'contact'
-  get 'proudcts', to: 'static_pages#products', as: 'products'
+  get 'manufacturers', to: 'static_pages#manufacturers', as: 'manufacturers'
   root to: 'static_pages#index'
 end

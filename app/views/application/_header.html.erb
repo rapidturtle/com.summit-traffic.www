@@ -9,7 +9,7 @@
 <aside class="left-off-canvas-menu">
   <ul class="off-canvas-list">
     <li><%= link_to 'Home', root_path %></li>
-    <li><%= link_to 'Products', products_path %></li>
+    <li><%= link_to 'Manufacturers', manufacturers_path %></li>
     <li><%= link_to 'Contact Us', contact_path %></li>
   </ul>
 </aside>
@@ -23,7 +23,7 @@
     </ul>
     <section class="top-bar-section">
       <ul class="right">
-        <li class="<%= 'active' if params[:action] == 'products' %>"><%= link_to 'Products', products_path %></li>
+        <li class="<%= 'active' if params[:action] == 'manufacturers' %>"><%= link_to 'Manufacturers', manufacturers_path %></li>
         <li class="<%= 'active' if params[:action] == 'contact' %>"><%= link_to 'Contact Us', contact_path %></li>
       </ul>
     </section>

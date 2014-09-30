@@ -3,7 +3,7 @@ class StaticPagesController < ApplicationController
 
   end
 
-  def products
+  def manufacturers
 
   end
 

@@ -38,7 +38,7 @@ GEM
     binding_of_caller (0.7.3.pre1)
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
-    byebug (3.4.0)
+    byebug (3.4.2)
       columnize (~> 0.8)
       debugger-linecache (~> 1.2)
       slop (~> 3.6)
@@ -67,14 +67,13 @@ GEM
     coffee-script-source (1.8.0)
     colorize (0.7.3)
     columnize (0.8.9)
-    database_cleaner (1.3.0)
     debug_inspector (0.0.2)
     debugger-linecache (1.2.0)
     erubis (2.7.0)
     execjs (2.2.1)
-    ffi (1.9.3)
+    ffi (1.9.5)
     formatador (0.2.5)
-    foundation-rails (5.4.4.0)
+    foundation-rails (5.4.5.0)
       railties (>= 3.1.0)
       sass (>= 3.2.0)
     globalid (0.3.0)
@@ -101,7 +100,7 @@ GEM
       thor (>= 0.14, < 2.0)
     json (1.8.1)
     kgio (2.9.2)
-    listen (2.7.9)
+    listen (2.7.11)
       celluloid (>= 0.15.2)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
@@ -113,16 +112,13 @@ GEM
     method_source (0.8.2)
     mime-types (2.3)
     mini_portile (0.6.0)
-    miniskirt (1.2.1)
-      activesupport
-    minitest (5.4.1)
+    minitest (5.4.2)
     multi_json (1.10.1)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.1)
     nokogiri (1.6.3.1)
       mini_portile (= 0.6.0)
-    pg (0.17.1)
     pry (0.10.1)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -141,13 +137,13 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.2.0.beta1)
       sprockets-rails (~> 3.0.0.beta1)
-    rails-deprecated_sanitizer (1.0.2)
+    rails-deprecated_sanitizer (1.0.3)
       activesupport (>= 4.2.0.alpha)
-    rails-dom-testing (1.0.2)
+    rails-dom-testing (1.0.3)
       activesupport
       nokogiri (~> 1.6.0)
       rails-deprecated_sanitizer (>= 1.0.1)
-    rails-html-sanitizer (1.0.0)
+    rails-html-sanitizer (1.0.1)
       loofah (~> 2.0)
     railties (4.2.0.beta1)
       actionpack (= 4.2.0.beta1)
@@ -201,7 +197,7 @@ GEM
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
-    web-console (2.0.0.beta3)
+    web-console (2.0.0.beta4)
       activemodel (~> 4.0)
       binding_of_caller (= 0.7.3.pre1)
       railties (~> 4.0)
@@ -216,15 +212,12 @@ DEPENDENCIES
   capistrano-rails
   capistrano-rbenv
   coffee-rails (~> 4.0.0)
-  database_cleaner
   foundation-rails
   guard-minitest
   guard-pow
   jbuilder (~> 2.0)
   jquery-rails
-  miniskirt
   minitest
-  pg
   rails (= 4.2.0.beta1)
   rails-html-sanitizer (~> 1.0)
   sass-rails (~> 5.0.0.beta1)

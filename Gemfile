@@ -7,7 +7,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'foundation-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
-gem 'pg'
+# gem 'pg'
 gem 'rails-html-sanitizer', '~> 1.0'
 gem 'sass-rails', '~> 5.0.0.beta1'
 gem 'turbolinks'
@@ -28,10 +28,10 @@ group :development do
 end
 
 group :test do
-  gem 'database_cleaner'
+  # gem 'database_cleaner'
   gem 'guard-minitest'
   gem 'guard-pow'
-  gem 'miniskirt'
+  # gem 'miniskirt'
   gem 'minitest'
 end
 

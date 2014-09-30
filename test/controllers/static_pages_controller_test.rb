@@ -6,8 +6,8 @@ class StaticPagesControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "gets products" do
-    get :products
+  test "gets manufacturers" do
+    get :manufacturers
     assert_response :success
   end
 

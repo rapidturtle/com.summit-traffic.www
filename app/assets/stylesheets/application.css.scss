@@ -35,6 +35,16 @@
   overflow-y: auto;
 }
 
+#billboard {
+  background-color: #333;
+  background-image: image-url('billboard_NewMexico.png');
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 2.5rem;
+  height: 375px;
+}
+
 #manufacturers {
   li {
     h2 {

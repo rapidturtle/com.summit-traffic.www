@@ -1,0 +1,55 @@
+@import "foundation_and_overrides";
+@import "globals/all";
+
+.debug_dump {
+  background-color: #eee;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  color: #666;
+  font-family: 'Source Code Pro';
+  font-weight: normal;
+  font-size: 13px;
+  padding: 30px;
+}
+
+.off-canvas-wrap, .inner-wrap {
+  min-height: 100%;
+}
+
+.off-canvas-wrap {
+  height: 100%;
+  overflow-y: auto;
+}
+
+#billboard {
+  background-color: #333;
+  background-image: image-url('billboard_Utah.png');
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 2.5rem;
+  height: 375px;
+}
+
+#manufacturers {
+  li {
+    h2 {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+#site-icon {
+  background: image-url('icon.svg') no-repeat 0 50%;
+  margin-left: 15px;
+  padding-left: 23px;
+}
+
+#site-footer {
+  border-top: 1px solid #ccc;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  p {
+    font-size: 0.8rem;
+  }
+}

@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.2.0.beta2'
+gem 'rails', '4.2.0.beta4'
 
 # gem 'bcrypt', '~> 3.1.7'
 gem 'coffee-rails', '~> 4.0.0'
@@ -33,6 +33,7 @@ group :test do
   gem 'guard-pow'
   # gem 'miniskirt'
   gem 'minitest'
+  gem 'rake'
 end
 
 gem 'unicorn', group: :production

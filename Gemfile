@@ -33,6 +33,7 @@ group :test do
   gem 'guard-pow'
   # gem 'miniskirt'
   gem 'minitest'
+  gem 'rake'
 end
 
 gem 'unicorn', group: :production

@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.2.0.beta4'
+gem 'rails', '4.2.0.rc3'
 
 # gem 'bcrypt', '~> 3.1.7'
 gem 'coffee-rails', '~> 4.0.0'
@@ -28,7 +28,7 @@ group :development do
 end
 
 group :test do
-  gem "codeclimate-test-reporter", require: nil
+  gem 'codeclimate-test-reporter', require: nil
   # gem 'database_cleaner'
   gem 'guard-minitest'
   gem 'guard-pow'

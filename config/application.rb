@@ -8,10 +8,10 @@ require 'rails'
   rails/test_unit
   sprockets
 ).each do |framework|
-    begin
-        require "#{framework}/railtie"
-    rescue LoadError
-    end
+  begin
+    require "#{framework}/railtie"
+  rescue LoadError
+  end
 end
 
 # Require the gems listed in Gemfile, including any gems

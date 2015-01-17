@@ -1,9 +1,9 @@
 @import 'foundation_and_overrides';
 @import 'globals/all';
 
-#home-billboard {
+.home-billboard {
   background-color: #333;
-  background-image: image-url('billboard_Utah.png');
+  background-image: image-url('billboard_Utah.jpg');
   background-position: 50% 50%;
   background-repeat: no-repeat;
   color: #fff;

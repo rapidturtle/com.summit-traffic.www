@@ -198,7 +198,7 @@ $secondary-color: #eee;
 // $header-font-family: $body-font-family;
 // $header-font-weight: $font-weight-normal;
 // $header-font-style: normal;
-// $header-font-color: $iron;
+// $header-font-color: $jet;
 // $header-line-height: 1.4;
 // $header-top-margin: .2rem;
 // $header-bottom-margin: .5rem;
@@ -1093,6 +1093,7 @@ $secondary-color: #eee;
 // $reveal-modal-bg: $white;
 // $reveal-position-top: rem-calc(100);
 // $reveal-default-width: 80%;
+// $reveal-max-width: $row-width;
 // $reveal-modal-padding: rem-calc(20);
 // $reveal-box-shadow: 0 0 10px rgba($black,.4);
 
@@ -1139,7 +1140,7 @@ $secondary-color: #eee;
 // $side-nav-font-weight: $font-weight-normal;
 // $side-nav-font-weight-active: $side-nav-font-weight;
 // $side-nav-font-family: $body-font-family;
-// $side-nav-active-font-family: $side-nav-font-family;
+// $side-nav-font-family-active: $side-nav-font-family;
 
 // We use these to control heading styles.
 // $side-nav-heading-color: $side-nav-link-color;

@@ -1,0 +1,12 @@
+@import 'foundation_and_overrides';
+@import 'globals/all';
+
+.home-billboard {
+  background-color: #333;
+  background-image: image-url('billboard_Colorado.jpg');
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 2.5rem;
+  height: 375px;
+}

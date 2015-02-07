@@ -1,0 +1,9 @@
+jQuery ->
+  states = [
+    "<%= asset_path 'billboard_Arizona.jpg' %>"
+    "<%= asset_path 'billboard_Colorado.jpg' %>"
+    "<%= asset_path 'billboard_NewMexico.jpg' %>"
+    "<%= asset_path 'billboard_Utah.jpg' %>"
+  ]
+  state = states[Math.floor(Math.random() * states.length)]
+  $(".home-billboard").css("background-image", "url('#{state}')")

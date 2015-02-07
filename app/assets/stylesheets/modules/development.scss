@@ -1,0 +1,13 @@
+@import 'foundation_and_overrides';
+@import 'globals/all';
+
+.debug_dump {
+  background-color: #eee;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  color: #666;
+  font-family: 'Source Code Pro';
+  font-weight: normal;
+  font-size: 13px;
+  padding: 30px;
+}

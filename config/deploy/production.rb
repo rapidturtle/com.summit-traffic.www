@@ -17,7 +17,7 @@ set :branch, 'master'
 # server list. The second argument is a, or duck-types, Hash and is
 # used to set extended properties on the server.
 
-server 've.eyequeue.us', user: 'deploy', roles: %w{web app db}
+server 've.eyequeue.us', user: 'deploy', roles: %w{web app}
 
 
 # Custom SSH Options

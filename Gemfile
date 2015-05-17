@@ -1,40 +1,40 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
 
-gem 'rails', '4.2.0'
+gem "rails", "4.2.1"
 
-# gem 'bcrypt', '~> 3.1.7'
-gem 'coffee-rails', '~> 4.0.0'
-gem 'foundation-rails'
-gem 'jbuilder', '~> 2.0'
-gem 'jquery-rails'
-# gem 'pg'
-gem 'rails-html-sanitizer', '~> 1.0'
-gem 'sass-rails', '~> 5.0.0.beta1'
-gem 'turbolinks'
-gem 'uglifier', '>= 1.3.0'
+gem "coffee-rails", "~> 4.1.0"
+gem "font-awesome-sass"
+gem "foundation-rails"
+gem "jbuilder", "~> 2.0"
+gem "jquery-rails"
+gem "sass-rails", "~> 5.0"
+gem "turbolinks"
+gem "uglifier", ">= 1.3.0"
 
-gem 'sdoc', '~> 0.4.0', group: :doc
+# bundle exec rake doc:rails generates the API under doc/api
+gem "sdoc", "~> 0.4.0", group: :doc
 
 group :development, :test do
-  gem 'byebug'
-  gem 'spring'
-  gem 'web-console', '~> 2.0.0.beta2'
+  gem "byebug"
+  gem "spring"
+  gem "web-console", "~> 2.0"
 end
 
 group :development do
-  gem 'capistrano-bundler'
-  gem 'capistrano-rails'
-  gem 'capistrano-rbenv'
+  gem "rack-livereload"
 end
 
 group :test do
-  gem 'codeclimate-test-reporter', require: nil
-  # gem 'database_cleaner'
-  gem 'guard-minitest'
-  gem 'guard-pow'
-  # gem 'miniskirt'
-  gem 'minitest'
-  gem 'rake'
+  gem "codeclimate-test-reporter", require: nil
+  gem "guard-livereload"
+  gem "guard-minitest"
+  gem "guard-pow"
+  gem "minitest-rails"
+  gem "minitest-rails-capybara"
+  gem "rake"
 end
 
-gem 'unicorn', group: :production
+group :production do
+  gem "therubyracer", platforms: :ruby
+  gem "unicorn"
+end

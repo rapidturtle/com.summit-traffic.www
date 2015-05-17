@@ -1,17 +1,27 @@
-@import 'foundation_and_overrides';
-@import 'globals/all';
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import "foundation_and_overrides";
+@import "globals/all";
 
-#site-icon {
-  background: image-url('icon.svg') no-repeat 0 50%;
-  margin-left: 15px;
-  padding-left: 23px;
+.site-icon {
+  background: asset-url("icon.svg") no-repeat 0 50%;
+  margin-left: rem-calc(15);
+  padding-left: rem-calc(23) !important;
 }
 
-#site-footer {
-  border-top: 1px solid #ccc;
-  margin-top: 1rem;
-  padding-top: 1rem;
+.offsite::after {
+  content: "\f101";
+  font-family: FontAwesome;
+  margin-left: 0.33em;
+}
 
+.site-footer {
+  border-top: 1px dotted $iron;
+  color: $aluminum;
+  margin-top: $global-vertical-spacing !important;
+  padding-top: $global-vertical-spacing;
+
+  li,
   p {
     font-size: 0.8rem;
   }

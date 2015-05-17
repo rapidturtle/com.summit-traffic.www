@@ -1,8 +1,0 @@
-language: ruby
-<<<<<<< HEAD
-=======
-cache: bundler
->>>>>>> feature/home
-bundler_args: --without production
-before_script:
-  - mv config/secrets.travis.yml config/secrets.yml

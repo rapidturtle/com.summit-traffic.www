@@ -89,7 +89,7 @@ $include-html-global-classes: $include-html-classes;
 // We use these to define default font stacks
 $font-family-sans-serif: "Source Sans Pro", sans-serif;
 // $font-family-serif: Georgia, Cambria, "Times New Roman", Times, serif;
-// $font-family-monospace: Consolas, "Liberation Mono", Courier, monospace;
+$font-family-monospace: "Source Code Pro", monospace;
 
 // We use these to define default font weights
 $font-weight-normal: 300 !default;
@@ -103,25 +103,25 @@ $secondary-color: #eee;
 // $warning-color: #f08a24;
 // $info-color: #a0d3e8;
 
-// $white       : #FFFFFF;
-// $ghost       : #FAFAFA;
-// $snow        : #F9F9F9;
-// $vapor       : #F6F6F6;
-// $white-smoke : #F5F5F5;
-// $silver      : #EFEFEF;
-// $smoke       : #EEEEEE;
-// $gainsboro   : #DDDDDD;
-// $iron        : #CCCCCC;
-// $base        : #AAAAAA;
-// $aluminum    : #999999;
-// $jumbo       : #888888;
-// $monsoon     : #777777;
-// $steel       : #666666;
-// $charcoal    : #555555;
-// $tuatara     : #444444;
-// $oil         : #333333;
-// $jet         : #222222;
-// $black       : #000000;
+$white       : #ffffff;
+$ghost       : #fafafa;
+$snow        : #f9f9f9;
+$vapor       : #f6f6f6;
+$white-smoke : #f5f5f5;
+$silver      : #efefef;
+$smoke       : #eeeeee;
+$gainsboro   : #dddddd;
+$iron        : #cccccc;
+$base        : #aaaaaa;
+$aluminum    : #999999;
+$jumbo       : #888888;
+$monsoon     : #777777;
+$steel       : #666666;
+$charcoal    : #555555;
+$tuatara     : #444444;
+$oil         : #333333;
+$jet         : #222222;
+$black       : #000000;
 
 // We use these to control various global styles
 // $body-bg: $white;
@@ -147,6 +147,10 @@ $secondary-color: #eee;
 // $shiny-edge-size: 0 1px 0;
 // $shiny-edge-color: rgba($white, .5);
 // $shiny-edge-active-color: rgba($black, .2);
+
+// We use these to control horizontal and vertical spacing
+$global-horizontal-spacing: remcalc(20);
+$global-vertical-spacing: rem-calc(20);
 
 // d. Media Query Ranges
 // - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -196,7 +200,7 @@ $secondary-color: #eee;
 
 // We use these to control header font styles
 // $header-font-family: $body-font-family;
-// $header-font-weight: $font-weight-normal;
+// $header-font-weight: $font-weight-bold;
 // $header-font-style: normal;
 // $header-font-color: $jet;
 // $header-line-height: 1.4;
@@ -205,10 +209,10 @@ $secondary-color: #eee;
 // $header-text-rendering: optimizeLegibility;
 
 // We use these to control header font sizes
-// $h1-font-size: rem-calc(44);
-// $h2-font-size: rem-calc(37);
-// $h3-font-size: rem-calc(27);
-// $h4-font-size: rem-calc(23);
+// $h1-font-size: rem-calc(26);
+// $h2-font-size: rem-calc(24);
+// $h3-font-size: rem-calc(22);
+// $h4-font-size: rem-calc(20);
 // $h5-font-size: rem-calc(18);
 // $h6-font-size: 1rem;
 
@@ -982,7 +986,7 @@ $secondary-color: #eee;
 // $price-table-margin-bottom: rem-calc(20);
 
 // We use these to control the title styles
-// $price-title-bg: $oil;
+// $price-title-bg: $smoke;
 // $price-title-padding: rem-calc(15 20);
 // $price-title-align: center;
 // $price-title-color: $smoke;
@@ -1366,10 +1370,10 @@ $secondary-color: #eee;
 
 // Height and margin
 // $topbar-height: 45px;
-// $topbar-margin-bottom: 0;
+$topbar-margin-bottom: $global-vertical-spacing !important;
 
 // Controlling the styles for the title in the top bar
-// $topbar-title-weight: $font-weight-normal;
+$topbar-title-weight: $font-weight-bold;
 // $topbar-title-font-size: rem-calc(17);
 
 // Style the top bar dropdown elements
@@ -1395,7 +1399,7 @@ $secondary-color: #eee;
 // $topbar-link-bg-active: $primary-color;
 // $topbar-link-bg-active-hover: scale-color($primary-color, $lightness: -14%);
 // $topbar-link-font-family: $body-font-family;
-// $topbar-link-text-transform: none;
+$topbar-link-text-transform: uppercase;
 // $topbar-link-padding: $topbar-height / 3;
 // $topbar-back-link-size: $h5-font-size;
 // $topbar-link-dropdown-padding: 20px;

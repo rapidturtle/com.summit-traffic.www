@@ -1,16 +1,25 @@
 require "codeclimate-test-reporter"
 CodeClimate::TestReporter.start
 
-ENV['RAILS_ENV'] ||= 'test'
-require File.expand_path('../../config/environment', __FILE__)
-require 'minitest/pride'
-require 'rails/test_help'
+ENV["RAILS_ENV"] ||= "test"
+require File.expand_path("../../config/environment", __FILE__)
+require "rails/test_help"
 
-Dir[File.expand_path('test/factories/**/*.rb')].each { |file| require file }
+require "minitest/pride"
+require "minitest/rails"
+require "minitest/rails/capybara"
 
 class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   # fixtures :all
 
   # Add more helper methods to be used by all tests here...
+end
+
+class Minitest::Test
+  def setup
+  end
+
+  def teardown
+  end
 end

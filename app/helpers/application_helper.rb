@@ -1,5 +1,5 @@
 module ApplicationHelper
-  def full_title(page_title)
+  def full_title(page_title = nil)
     base_title = 'Summit Traffic Solutions'
     if page_title.present?
       "#{base_title} - #{page_title}"

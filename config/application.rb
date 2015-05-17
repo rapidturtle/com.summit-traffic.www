@@ -1,4 +1,4 @@
-require File.expand_path('../boot', __FILE__)
+require File.expand_path("../boot", __FILE__)
 
 # require 'rails/all'
 require 'rails'
@@ -34,5 +34,9 @@ module SummitTraffic
 
     # For not swallow errors in after_commit/after_rollback callbacks.
     # config.active_record.raise_in_transactional_callbacks = true
+
+    config.generators do |g|
+      g.test_framework :minitest, spec: true, fixture: false
+    end
   end
 end

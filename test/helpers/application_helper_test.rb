@@ -1,11 +1,17 @@
-require 'test_helper'
+require "test_helper"
 
-class ApplicationHelperTest < ActionView::TestCase
-  test "formats a fill title with an argument" do
-    assert_equal 'Summit Traffic Solutions - Contact', full_title('Contact')
-  end
+describe ApplicationHelper do
+  describe "full_title" do
+    it "formats a title without an argument" do
+      full_title.must_equal "Summit Traffic Solutions"
+    end
 
-  test "formats a full title without an argument" do
-    assert_equal 'Summit Traffic Solutions', full_title('')
+    it "formats a title with an empty argument" do
+      full_title("").must_equal "Summit Traffic Solutions"
+    end
+
+    it "formats a title with an argument" do
+      full_title("About Us").must_equal "Summit Traffic Solutions - About Us"
+    end
   end
 end

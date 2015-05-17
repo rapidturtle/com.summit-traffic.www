@@ -3,16 +3,16 @@
 @import "foundation_and_overrides";
 @import "globals/all";
 
-a.offsite::after {
-  content: "\f101";
-  font-family: FontAwesome;
-  margin-left: 0.33em;
-}
-
 .site-icon {
   background: asset-url("icon.svg") no-repeat 0 50%;
   margin-left: rem-calc(15);
   padding-left: rem-calc(23) !important;
+}
+
+.offsite::after {
+  content: "\f101";
+  font-family: FontAwesome;
+  margin-left: 0.33em;
 }
 
 .site-footer {

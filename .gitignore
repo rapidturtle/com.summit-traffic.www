@@ -16,3 +16,6 @@ config/database.yml
 
 # Ignore pow environment settings
 .powenv
+
+/node_modules
+.env

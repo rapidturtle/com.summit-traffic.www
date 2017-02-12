@@ -8,10 +8,10 @@
 
     <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,600,300italic,600italic" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-    <%= stylesheet_link_tag    "application" %>
+    <%= stylesheet_link_tag "application" %>
+    <script src="https://use.fontawesome.com/8da801af9a.js"></script>
     <%= javascript_include_tag "vendor/modernizr" %>
-    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-    <%= csrf_meta_tags %>
+    <%= javascript_include_tag "application" %>
   </head>
 
   <body>
@@ -28,6 +28,7 @@
         <%= render "site_footer" %>
         <%= content_tag :div, class: "row" do %>
           <%= content_tag :div, class: "small-12 columns panel radius" do %>
+            <%= debug Rails.env %>
             <%= debug params %>
           <% end %>
         <% end if Rails.env == "development" %>

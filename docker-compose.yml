@@ -4,7 +4,6 @@ version: "3.7"
 services:
   app:
     build: .
-    command: ng serve --host 0.0.0.0 --disabledHostCheck
     depends_on:
       - proxy
     environment:
@@ -12,15 +11,16 @@ services:
     labels:
       - traefik.enable=true
       - traefik.http.routers.app.entryPoints=web
-      - traefik.http.routers.app.middlewares=secureRedirect@file
+      # - traefik.http.routers.app.middlewares=secureRedirect@file
       - traefik.http.routers.app.rule=Host(`summit-traffic.localhost`)
-      - traefik.http.routers.app-secured.entryPoints=web-secure
-      - traefik.http.routers.app-secured.rule=Host(`summit-traffic.localhost`)
-      - traefik.http.routers.app-secured.tls=true
+      # - traefik.http.routers.app-secured.entryPoints=web-secure
+      # - traefik.http.routers.app-secured.rule=Host(`summit-traffic.localhost`)
+      # - traefik.http.routers.app-secured.tls=true
     volumes:
-      - ./src:/home/app/summit-traffic/src:delegated
-      - ./package.json:/home/app/summit-traffic/package.json
-      - ./yarn.lock:/home/app/summit-traffic/yarn.lock
+      - .:/home/app/summit-traffic:delegated
+    #   - ./src:/home/app/summit-traffic/src:delegated
+    #   - ./package.json:/home/app/summit-traffic/package.json
+    #   - ./yarn.lock:/home/app/summit-traffic/yarn.lock
 
   proxy:
     image: traefik:latest
@@ -33,5 +33,5 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - ./docker/proxy/traefik.yml:/etc/traefik/traefik.yml
       - ./docker/proxy/dynamic_config.yml:/etc/traefik/dynamic_config.yml
-      - ./docker/proxy/certs/server.crt:/etc/ssl/server.crt
-      - ./docker/proxy/certs/server.key:/etc/ssl/server.key
+      # - ./docker/proxy/certs/server.crt:/etc/ssl/server.crt
+      # - ./docker/proxy/certs/server.key:/etc/ssl/server.key

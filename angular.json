@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "cli": {
     "packageManager": "yarn"
   },
@@ -10,7 +10,7 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "sass"
+          "style": "scss"
         }
       },
       "root": "",
@@ -27,11 +27,13 @@
             "tsConfig": "tsconfig.app.json",
             "aot": true,
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/data",
+              "src/CNAME",
+              "src/favicon.ico"
             ],
             "styles": [
-              "src/styles.sass"
+              "src/styles/index.scss"
             ],
             "scripts": []
           },
@@ -91,11 +93,12 @@
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/data",
+              "src/favicon.ico"
             ],
             "styles": [
-              "src/styles.sass"
+              "src/styles/index.scss"
             ],
             "scripts": []
           }

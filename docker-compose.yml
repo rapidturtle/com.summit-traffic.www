@@ -17,10 +17,9 @@ services:
       # - traefik.http.routers.app-secured.rule=Host(`summit-traffic.localhost`)
       # - traefik.http.routers.app-secured.tls=true
     volumes:
-      - .:/home/app/summit-traffic:delegated
-    #   - ./src:/home/app/summit-traffic/src:delegated
-    #   - ./package.json:/home/app/summit-traffic/package.json
-    #   - ./yarn.lock:/home/app/summit-traffic/yarn.lock
+      - ./src:/home/app/summit-traffic/src:delegated
+      - ./package.json:/home/app/summit-traffic/package.json
+      - ./yarn.lock:/home/app/summit-traffic/yarn.lock
 
   proxy:
     image: traefik:latest

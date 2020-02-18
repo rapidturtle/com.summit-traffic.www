@@ -25,4 +25,4 @@ COPY . .
 
 EXPOSE 4200
 
-CMD [ "ng", "serve", "--host=0.0.0.0", "--disabledHostCheck" ]
+CMD [ "ng", "serve", "--host=0.0.0.0", "--disableHostCheck" ]

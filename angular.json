@@ -33,7 +33,7 @@
               "src/favicon.ico"
             ],
             "styles": [
-              "src/styles/index.scss"
+              "src/styles/main.scss"
             ],
             "scripts": []
           },
@@ -98,7 +98,7 @@
               "src/favicon.ico"
             ],
             "styles": [
-              "src/styles/index.scss"
+              "src/styles/main.scss"
             ],
             "scripts": []
           }
